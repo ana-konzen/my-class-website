@@ -1,0 +1,115 @@
+body{
+    background:#efefef;
+    margin: 0px;
+  }
+  h1{
+    margin:0px;
+    font-size: 6vh;
+  }
+  
+  .container{
+    background:#ccace3;
+    position:relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    margin: 10px auto; /* 10px on the top and bottom, "auto" to center it on either side */
+    padding:20px;
+    
+    height:calc(100vh - 40px - 20px); /* 100% of the viewport height, minus 2x padding, minus 2x the margin. */
+    width:60vh; /* This is in "vh" units because we always want it to be relative to the height. In this case, it's a 3:5 ratio (60:100) 
+    */
+    
+  }
+
+  .titlebox {
+    height: 100vh;
+    width: 600px;
+    top: 0px;
+    left: 20px;
+    position: absolute;
+    z-index: 3;
+}
+
+.title-div {position: absolute;
+top: 330px;
+left: 12px;}
+
+  .title {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    color: rgb(246, 232, 153);
+    
+    height: 40px;
+    position: absolute;
+}
+
+.tour {
+top: -100px;
+font-family: "map-roman-compressed", serif;
+font-weight: 400;
+font-style: normal;
+font-size: 250px;
+color:  rgb(246, 232, 153);
+width: 300px;
+position: absolute;
+left: 10px;
+}
+
+
+.location {
+    font-family:  sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color:  rgb(246, 232, 153);
+    width: 500px;
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    font-size: 22px;
+    text-align: right;
+
+}
+
+.tickets {
+    font-family:sans-serif;
+    color:  rgb(246, 232, 153);
+    text-decoration: none;
+    font-weight: 300;
+left: 180px;
+height: 50px;
+font-size: 30px;
+bottom: 80px;
+line-height:200%;
+position: absolute;
+z-index: 9;
+border-radius: 50%;
+text-align: center;
+padding: 10px;
+}
+
+
+
+
+
+
+.bury {
+    
+    top: 20px;
+    left: 30px;}
+
+.me {left: 250px;
+    top: 20px;}
+
+.at {top: 20px; 
+left: 410px;}
+
+.make {top: 130px; 
+    left: 30px;}
+
+.out {top: 130px; 
+    left: 355px;}
+
+.creek {top: 240px; 
+    left: 30px;}

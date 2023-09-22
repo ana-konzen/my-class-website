@@ -1,0 +1,112 @@
+body{
+    background:#b6acff;
+    margin: 0px;
+  }
+  h1{
+    margin:0px;
+    font-size: 6vh;
+  }
+  
+  
+
+  .titlebox {
+    font-family: "solvent", sans-serif;
+font-weight: 400;
+font-style: normal;
+    height: 100vh;
+    width: 600px;
+    top: 0px;
+    left: 20px;
+    position: absolute;
+    z-index: 3;
+color: rgb(250, 230, 120);
+    
+
+}
+
+.title-div {position: absolute;
+top: 350px;
+left: -30px;}
+
+  .title {
+    
+    font-size: 10px;
+
+    
+    height: 40px;
+    position: absolute;
+}
+
+.tour {
+top: 0px;
+
+font-size: 250px;
+width: 300px;
+position: absolute;
+left: 10px;
+}
+
+
+.location {
+    
+    width: 500px;
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    font-size: 22px;
+    text-align: right;
+
+}
+
+.tickets {
+   
+
+    text-decoration: none;
+left: 450px;
+height: 50px;
+font-size: 6px;
+color: rgb(250, 230, 120);
+
+
+bottom: 200px;
+position: absolute;
+z-index: 9;
+border-radius: 50%;
+text-align: center;
+padding: 10px;
+}
+
+
+
+
+
+
+.bury {
+    width: 100px;
+    top: 35px;
+    left: 128px;
+    padding: 1px 10px 20px 20px;}
+
+.me {left: 265px;
+    top: 45px;
+    width: 50px;
+    padding: 10px 5px 12px 5px;}
+
+.at {top: 40px; 
+left: 330px;
+width: 50px;
+padding: 1px 10px 10px 10px;}
+
+.make {top: 110px; 
+    left: 200px;
+    padding: 10px 5px 1px 20px;}
+
+.out {top: 100px; 
+    left: 340px;
+    width: 70px;
+    padding: 6px 18px 4px 6px;}
+
+.creek {top: 160px; 
+    left: 350px;
+    width: 110px;
+    padding: 1px 20px 10px 10px;}

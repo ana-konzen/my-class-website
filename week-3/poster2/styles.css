@@ -1,0 +1,621 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(#a4acb4c3 0%, #171d24d6 20%, #171d24eb 70%);
+    margin: 0px;
+    overflow: hidden;
+
+  }
+
+  h1{
+    margin:0px;
+    font-size: 6vh;
+  }
+  
+  .titlebox {
+    height: 100vh;
+    width: 600px;
+    top: 0px;
+    left: 800px;
+    position: absolute;
+    z-index: 3;
+}
+
+.title-div {position: absolute;
+top: 300px;}
+
+  .title {
+    font-family: john-doe, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: rgb(39, 39, 39);
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.2), 0 6px 10px -5px rgba(0, 0, 0, 0.19);
+    
+    height: 40px;
+    position: absolute;
+}
+
+.tour {
+top: 90px;
+font-family: altesse-std-64pt, sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 230px;
+color: white;
+width: 300px;
+position: absolute;
+left: -200px;
+}
+
+.loc {font-size: 20px;
+top: 30px;
+width: 100px;
+left: 200px;
+position: absolute;}
+
+.loc2 {font-size: 27px;
+    top: 50px;
+    left: 260px;
+    position: absolute;}
+
+    .loc3 {font-size: 32px;
+        top: 80px;
+        left: 230px;
+        width: 300px;
+        position: absolute;}
+
+        .date {font-size: 25px;
+            top: 120px;
+            width: 220px;
+            left: 350px;
+            position: absolute;}
+
+.location {font-family: john-doe, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    width: 500px;
+    position: absolute;
+    top: 250px;
+    left: 60px;
+    text-align: right;
+
+}
+
+.tickets {
+    font-family: 'Franklin Gothic book', 'Arial', Arial, sans-serif;
+    font-weight: 200px;
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+left: 800px;
+height: 50px;
+font-size: 20px;
+width: 150px;
+bottom: 100px;
+line-height:200%;
+position: fixed;
+z-index: 9;
+border-radius: 50%;
+background-color: rgb(231, 231, 231);
+text-align: center;
+padding: 10px;
+box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 10px 5px rgba(0, 0, 0, 0.19);
+    
+}
+
+
+
+
+
+
+.bury {
+    width: 100px;
+    top: 35px;
+    left: 28px;
+    padding: 1px 10px 20px 20px;}
+
+.me {left: 165px;
+    top: 25px;
+    width: 50px;
+    padding: 10px 5px 12px 5px;}
+
+.at {top: 45px; 
+left: 230px;
+width: 50px;
+padding: 1px 10px 10px 10px;}
+
+.make {top: 105px; 
+    left: 262px;
+    padding: 10px 5px 1px 20px;}
+
+.out {top: 120px; 
+    left: 400px;
+    width: 70px;
+    padding: 6px 18px 4px 6px;}
+
+.creek {top: 110px; 
+    left: 505px;
+    width: 110px;
+    padding: 1px 20px 10px 10px;}
+
+ 
+
+  .building{
+    
+    width: 550px;
+    background-color: #020202;
+    height: 100vh;
+    top: 0px;
+    position: absolute;
+    left: 80px;
+    z-index: -10;
+    ;
+  }
+
+ 
+.windowframe {
+    width: 534px;
+    position: absolute;
+    margin: auto;
+    background-color: #000;
+    height: 164px;
+    top: 80px;
+    left: 10px;
+    perspective: 3000px;
+    perspective-origin: bottom left;
+    
+}
+
+.window {
+    width:100px;
+    height: 150px;
+    position:absolute;
+    top:5px;
+    transform-style: preserve-3d;
+
+    /* 
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1.0);  */
+}
+
+.row1 {top: -90px;
+    z-index: -1;}
+
+.row2 {top: 250px;
+z-index: -2;}
+
+.row3 { top: 420px;
+        z-index: -3;}
+
+.row4 { top: 590px;
+    z-index: -4;}
+
+.row5 { top: 760px;
+    z-index: -5;}
+
+.row6 { top: 930px;
+    z-index: -6;
+    overflow: hidden;
+    height: 65px;
+    }
+
+.one {
+    left: 5px;
+    animation: infinite linear wow;
+    transform-origin: bottom;
+
+}
+
+.shine {
+background-image: linear-gradient(160deg, rgba(255,255,255,0) 0%,rgb(255, 255, 255) 40%,rgba(127,108,123,0) 90%,rgba(127,108,123,0));
+height: 100%;
+width: 100%;
+position: absolute;
+opacity: 20%;
+z-index: 3;
+mix-blend-mode: hard-light;
+}
+
+
+
+
+.two {
+    left: 110px;
+    animation: infinite linear wow2;
+    transform-origin: bottom;
+}
+
+
+.three{
+    left: 215px;
+    animation: infinite linear wow3;
+    transform-origin: bottom;
+}
+
+.four{left: 320px;
+    animation: infinite linear wow4;
+    transform-origin: top;
+    z-index: 0;
+
+}
+
+.five{
+    left: 425px;
+    animation: infinite linear wow5;
+    transform-origin: bottom;
+    
+}
+
+.moving {
+    background-color: #090b0c;
+    animation-duration: 20s;
+    opacity: 70%;
+    z-index: 2;
+    margin: 2px;
+}
+
+.extra {
+    animation: 20s infinite linear wow4;
+    transform-origin: top;
+
+}
+
+.static {
+    box-shadow: -10px 10px 30px 10px rgba(0, 0, 0, 0.839) inset;
+    background-color: #2a4154;
+    opacity: 100%;
+    z-index: 0;
+    border: 2px solid #030303;
+
+}
+
+.boring {background-color: #10171c;
+    box-shadow: -10px 10px 30px 10px rgba(5, 5, 5, 0.691) inset;
+    animation-duration: 0s;
+    z-index: 1;
+}
+
+.star {animation: 20s infinite linear star;
+    z-index: 2;
+    margin: 2px;    border: none;
+}
+
+.delay {animation-delay: 8s;}
+
+.contra{animation: 20s 2s infinite linear wow5;
+    transform-origin: bottom;
+}
+
+
+
+/* i spent hours attempting to make a shadow for the window but failed :(( */
+
+/* .shadow {
+    width: 60px;
+    height: 120px;
+    background-color: black;
+    opacity: 70%;
+    left: 428px;
+    top: 35px;
+    filter: blur(1px);
+    transform:  rotatex(-60deg) rotatey(105deg) translate3d(0px, 0px, 60px);
+    position:absolute;
+
+} */
+
+
+
+
+
+
+@keyframes wow {
+    
+    0% {
+        transform: none;
+        box-shadow: none;
+
+
+        
+    }
+    7.5% {
+        transform:  rotatex(-60deg);
+        box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795)
+    }
+
+    50% {
+        transform:  rotatex(-60deg);
+    box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+    }
+
+    57.5% {
+        transform: none;
+        box-shadow: none;
+
+    }
+    100% {
+        transform: none;
+        box-shadow: none;
+
+    }
+  }
+
+
+@keyframes wow2 {
+    0% {
+        transform: none;
+        box-shadow: none;
+
+
+    }
+
+    7.5% {
+        transform: none;
+        box-shadow: none;
+
+
+    }
+
+    15% {
+        transform:  rotatex(-60deg);
+        box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+
+    }
+  
+    50% {
+        transform:  rotatex(-60deg);
+        box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+    }
+
+    57.5% {
+        transform:  rotatex(-60deg);
+        box-shadow: 0 -10px 4px -4px rgba(0, 0, 0, 0.623);
+    }
+
+    65% {
+        transform: none;
+        box-shadow: none;
+
+    }
+
+    100% {
+        transform: none;
+        box-shadow: none;
+
+    }
+
+
+}
+
+@keyframes wow3 {
+    
+    0% {
+        transform: none;
+        box-shadow: none;
+
+
+    }
+    15% {
+        transform: none;
+        box-shadow: none;
+        
+
+    }
+
+    22.5% {
+        transform: rotatex(-60deg);
+    box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+    }
+
+    50% {
+        transform: rotatex(-60deg);
+    box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+    }
+
+    65% {
+        transform: rotatex(-60deg);
+    box-shadow: -4px -10px 3px -3px rgba(0, 0, 0, 0.795);
+
+    }
+
+    72.5% {
+        transform: none;
+        box-shadow: none;
+
+    }
+
+    100% {
+        transform: none;
+        box-shadow: none;
+
+    }
+}
+
+@keyframes wow4 {
+    
+    0% {
+        transform: none;
+        opacity: 70%;
+        box-shadow: none;
+
+    }
+    22.5% {
+        transform: none;
+        opacity: 70%;
+        box-shadow: none;
+
+    }
+
+    30% {
+        transform: rotatex(50deg);
+        opacity: 70%;
+        box-shadow: 0 20px 4px -4px rgba(0, 0, 0, 0.623);
+    }
+
+    50% {
+        transform: rotatex(50deg);
+        opacity: 70%;
+        box-shadow: 0 20px 4px -4px rgba(0, 0, 0, 0.623);
+    }
+
+    72.5% {
+        transform:  rotatex(50deg);
+        opacity: 70%;
+        box-shadow: 0 20px 4px -4px rgba(0, 0, 0, 0.623);
+
+    }
+
+    80% {
+        transform: none;
+        opacity: 70%;
+        box-shadow: none;
+
+    }
+
+    100% {
+        transform: none;
+        opacity: 70%;
+        box-shadow: none;
+
+
+    }
+}
+
+@keyframes star {
+
+    0% {
+
+        background-color: #2a4154;
+        box-shadow: -10px 10px 30px 10px rgba(0, 0, 0, 0.843) inset;
+    }
+
+    22.5% {
+
+        background-color: #2a4154;
+        box-shadow: -10px 10px 30px 10px rgba(0, 0, 0, 0.843) inset;
+    }
+
+    30% {
+
+        background-color: #f1eddb;
+        box-shadow: 
+        -10px 10px 30px 10px rgba(0, 0, 0, 0.455) inset,
+        10px 50px 40px 4px rgba(255, 246, 233, 0.843) ;
+    }
+
+    50% {
+        background-color: #f1eddb;
+        box-shadow: 
+        -10px 10px 30px 10px rgba(0, 0, 0, 0.455) inset,
+        10px 50px 40px 4px rgba(255, 246, 233, 0.843) ;
+    }
+
+    72.5% {
+        background-color: #f1eddb;
+        box-shadow: 
+        -10px 10px 30px 10px rgba(0, 0, 0, 0.455) inset,
+        10px 50px 40px 4px rgba(255, 246, 233, 0.843);
+
+    }
+
+    80% {
+        background-color: #2a4154;
+        box-shadow: -10px 10px 30px 10px rgba(0, 0, 0, 0.843) inset;
+    
+    }
+
+    100% {
+        background-color: #2a4154;
+        box-shadow: -10px 10px 30px 10px rgba(0, 0, 0, 0.843) inset;
+    
+
+
+    }
+
+}
+
+@keyframes wow5 {
+    
+    0% {
+        transform: none;
+        box-shadow: none;
+        
+
+        
+    
+
+    }
+    30% {
+        transform: none;
+        box-shadow: none;
+        
+    }
+
+    37.5% {
+        transform: rotatex(-40deg); 
+        box-shadow: 
+        3px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        1px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        -1px -5px 3px -3px rgba(0, 0, 0, 0.2),
+        -3px -6px 3px -3px rgba(0, 0, 0, 0.2),
+        -5px -7px 3px -3px rgba(0, 0, 0, 0.2),
+        -6px -8px 4px -4px rgba(0, 0, 0, 0.2),
+        -7px -9px 5px -5px rgba(0, 0, 0, 0.3),
+        -7px -10px 6px -6px rgba(0, 0, 0, 0.3),
+        -9px -12px 7px -7px rgba(0, 0, 0, 0.4),
+        -11px -15px 8px -8px rgba(0, 0, 0, 0.5);
+    
+    }
+
+    50% {
+        transform: rotatex(-40deg);
+        box-shadow: 
+        3px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        1px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        -1px -5px 3px -3px rgba(0, 0, 0, 0.2),
+        -3px -6px 3px -3px rgba(0, 0, 0, 0.2),
+        -5px -7px 3px -3px rgba(0, 0, 0, 0.2),
+        -6px -8px 4px -4px rgba(0, 0, 0, 0.2),
+        -7px -9px 5px -5px rgba(0, 0, 0, 0.3),
+        -7px -10px 6px -6px rgba(0, 0, 0, 0.3),
+        -9px -12px 7px -7px rgba(0, 0, 0, 0.4),
+        -11px -15px 8px -8px rgba(0, 0, 0, 0.5);
+    
+
+    }
+
+    80% {
+        transform: rotatex(-40deg);
+        box-shadow: 
+        3px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        1px -4px 3px -3px rgba(0, 0, 0, 0.2),
+        -1px -5px 3px -3px rgba(0, 0, 0, 0.2),
+        -3px -6px 3px -3px rgba(0, 0, 0, 0.2),
+        -5px -7px 3px -3px rgba(0, 0, 0, 0.2),
+        -6px -8px 4px -4px rgba(0, 0, 0, 0.2),
+        -7px -9px 5px -5px rgba(0, 0, 0, 0.3),
+        -7px -10px 6px -6px rgba(0, 0, 0, 0.3),
+        -9px -12px 7px -7px rgba(0, 0, 0, 0.4),
+        -11px -15px 8px -8px rgba(0, 0, 0, 0.5);
+    
+
+
+    }
+
+    87.5% {
+        transform: none;
+        box-shadow: none;
+
+    }
+
+    100% {
+        transform: none;
+        box-shadow: none;
+
+    }
+}
