@@ -4,6 +4,8 @@ body{
     background-image: linear-gradient(#a4acb4c3 0%, #171d24d6 20%, #171d24eb 70%);
     margin: 0px;
     overflow: hidden;
+    perspective: 3000px;
+    perspective-origin: bottom left;
 
   }
 
@@ -15,7 +17,7 @@ body{
   .titlebox {
     height: 100vh;
     width: 600px;
-    top: 0px;
+    top: 100px;
     right: 200px;
     position: fixed;
     z-index: 3;
@@ -146,11 +148,12 @@ padding: 1px 10px 10px 10px;}
     
     width: 550px;
     background-color: #020202;
-    height: 100vh;
-    top: 0px;
+    height: 150vh;
+    top: -10px;
     position: fixed;
     left: 80px;
     z-index: -10;
+    transform: rotateY(40deg) scale(1.6, 1.1)
     ;
   }
 
@@ -161,7 +164,7 @@ padding: 1px 10px 10px 10px;}
     margin: auto;
     background-color: #000;
     height: 164px;
-    top: 80px;
+    top: 130px;
     left: 10px;
     perspective: 3000px;
     perspective-origin: bottom left;
@@ -179,19 +182,19 @@ padding: 1px 10px 10px 10px;}
     animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1.0);  */
 }
 
-.row1 {top: -90px;
+.row1 {top: -40px;
     z-index: -1;}
 
-.row2 {top: 250px;
+.row2 {top: 300px;
 z-index: -2;}
 
-.row3 { top: 420px;
+.row3 { top: 470px;
         z-index: -3;}
 
-.row4 { top: 590px;
+.row4 { top: 640px;
     z-index: -4;}
 
-.row5 { top: 760px;
+.row5 { top: 810px;
     z-index: -5;}
 
 .row6 { top: 930px;
