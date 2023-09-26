@@ -1,5 +1,5 @@
 body{
-    background:#b6acff;
+    background:#a59bee;
     margin: 0px;
   }
   h1{
@@ -19,7 +19,7 @@ font-style: normal;
     left: 20px;
     position: absolute;
     z-index: 3;
-color: rgb(250, 230, 120);
+color: rgb(255, 253, 164);
     
 
 }
@@ -65,7 +65,7 @@ left: 10px;
 left: 450px;
 height: 50px;
 font-size: 6px;
-color: rgb(250, 230, 120);
+color: rgb(255, 252, 101);
 
 
 bottom: 200px;
