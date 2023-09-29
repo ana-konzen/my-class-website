@@ -48,26 +48,15 @@ opacity: 50%;
 	height: 700px;
     opacity: 20%;
     border: 2px white solid;
-    /* border-radius: 50%; */
     border-radius: 71% 25% 76% 48% / 58% 76% 40% 64% ;
     box-shadow: 
     inset 0px 0px 10px 2px rgb(253, 226, 226),
-    /* inset 0px 10px 30px 20px rgba(255, 255, 255, 0.787), */
      inset 10px 30px 40px 20px rgba(255, 181, 181, 0.279);
-    /* background-image: radial-gradient(
-        ellipse 50% 75% at 25% 20%,
-        rgb(255, 255, 255) 0%,
-         rgba(255, 255, 255, 0.688) 5%, 
-        rgba(255, 255, 255, 0.495) 10%,
-        rgba(255, 255, 255, 0.298) 20%,
-        rgba(255, 255, 255, 0.179) 40%,
-        rgba(45, 45, 45, 0.164) 100%); */
     position: absolute;
     top: 460px;
     z-index: 999;
     left: 48%;
     pointer-events: none;
-    /* background: radial-gradient(ellipse at 30% 30%,  rgba(255, 255, 255, 0.836) 0%,rgba(255,255,255,0) 20%); */
     background: radial-gradient(ellipse at 30% 20%,  rgb(255, 255, 255) 0%,#762525 90%);
     transform: rotate(10deg) translateX(-50%) translateY(-50%) scale(0.9);
     animation:  4s ease-in-out infinite alternate water,
@@ -222,16 +211,16 @@ border-radius: 26% 81% 17% 95% / 61% 93% 49% 63% ;
     to {opacity: 9%;}
 }
 
-.mitski {width: 650px;
-    height: 800px;
-left: 50%;
+.mitski {width: 700px;
+    height: 850px;
+left: 48%;
 transform: translateX(-50%);
 position: absolute;
 background-size: 80%;
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 50%;
-top: 70px;
+top: 60px;
 animation: 2s alternate infinite linear opacity,
 10s alternate infinite linear rotation;
 z-index: 0;
@@ -243,15 +232,15 @@ transition: 0.2s;
  }
 
  .mitski2 {width: 550px;
-    height: 700px;
-left: 50%;
+    height: 800px;
+left: 48%;
 transform: translateX(-50%);
 position: absolute;
 background-size: 80%;
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 50%;
-top: 100px;
+top: 40px;
 animation: 2s alternate infinite linear ripple;
 z-index: 1;
 transition: 0.2s;
@@ -259,19 +248,19 @@ transition: 0.2s;
  }
 
  @keyframes ripple {
-    from {box-shadow: 10px -30px 20px 70px #762525 inset;
+    from {box-shadow: 10px 0px 20px 70px #762525 inset;
     }
-    to {box-shadow: 10px -30px 20px 100px #762525 inset;
-    opacity: 70%;}
+    to {box-shadow: 10px 0px 30px 100px #762525 inset;
+    ;}
 
  }
 
  @keyframes opacity {
     0% {
-    opacity: 100%;
+    opacity: 80%;
     }
 50% {
-    opacity: 100%;
+    opacity: 80%;
     }
     100% {
     opacity: 60%;
@@ -342,105 +331,105 @@ transition: 0.2s;
 
 .s20:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 330px #762525 inset;
+    -25px -10px 40px 350px #762525 inset;
      }
 
 
 .s19:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 270px #762525 inset;
+    -25px -10px 40px 320px #762525 inset;
     }
 
 .s18:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 260px #762525 inset;
+    -25px -10px 40px 300px #762525 inset;
     }
 
 .s17:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 250px #762525 inset;
+    -25px -10px 40px 270px #762525 inset;
     }
 
 .s16:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 240px #762525 inset;
+    -25px -10px 40px 260px #762525 inset;
     }
 
 .s15:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 230px #762525 inset;
+    -25px -10px 40px 250px #762525 inset;
     }
 
 .s14:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 220px #762525 inset;
+    -25px -10px 40px 240px #762525 inset;
     }
 
 .s13:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 210px #762525 inset;
+    -25px -10px 40px 230px #762525 inset;
      }
 
 .s12:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 200px #762525 inset;
+    -25px -10px 40px 220px #762525 inset;
      }
 
 .s11:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 190px #762525 inset;
+    -25px -10px 40px 210px #762525 inset;
      }
 
 .s10:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 180px #762525 inset;
+    -25px -10px 40px 200px #762525 inset;
      }
 
 .s9:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 170px #762525 inset;
+    -25px -10px 40px 190px #762525 inset;
      }
 
 .s8:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 160px #762525 inset;
+    -25px -10px 40px 180px #762525 inset;
      }
 
 .s7:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 150px #762525 inset;
+    -25px -10px 40px 170px #762525 inset;
      }
 
 .s6:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 140px #762525 inset;
+    -25px -10px 40px 160px #762525 inset;
      }
 
 .s5:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 130px #762525 inset;
+    -25px -10px 40px 150px #762525 inset;
     }
 
 .s4:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 120px #762525 inset;
+    -25px -10px 40px 140px #762525 inset;
     }
 
 .s3:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 110px #762525 inset;
+    -25px -10px 40px 130px #762525 inset;
      }
 
 
 .s2:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 40px 100px #762525 inset;
+    -25px -10px 40px 120px #762525 inset;
      }
 
 
 .s1:hover ~ .mitski {
     box-shadow: 
-    -25px -10px 20px 90px #762525 inset;
+    -25px -10px 20px 100px #762525 inset;
     }
 
 
