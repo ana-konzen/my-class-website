@@ -28,7 +28,7 @@ body{
     box-shadow: inset 10px 10px 20px #a5a7a9, inset -10px -10px 20px #ffffff;
    pointer-events: none;
    background-color: rgba(255, 255, 255, 0.485);
-    top: 50%;
+    top: 45%;
     opacity: 40%;
     z-index: 999;
     left: 48%;
