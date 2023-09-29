@@ -154,7 +154,7 @@ z-index: 99;
 
 .s1 {border-width: 50px 50px 3px 50px;
 }
-.s21 {border-width: 3px 50px 50px 50px;}
+.s20 {border-width: 3px 50px 50px 50px;}
 
 .s4 {border-width: 3px 50px 15px 50px; }
 
@@ -323,11 +323,12 @@ font-variation-settings: "ital" 0, "wdth" 100, "wght" 100;
     font-size: 20px;
     color: white;
     transition: 2s;
-    height: 50px;
+    height: 80px;
     width: 200%;
     position: absolute;
     z-index: 1;
-    top: 850px;
+    top: 800px;
+    padding-top: 50px;
     letter-spacing: 5px;
     left: 87px;
     line-height: 40px;
@@ -342,6 +343,15 @@ font-variation-settings: "ital" 0, "wdth" 400, "wght" 100;
 
 .location span {
     margin-left: 40px;
+}
+
+.location:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 330px rgb(0, 0, 0) inset;
+     }
+.location:hover ~ .water {
+    opacity: 1;
+    background-color: #762525;
 }
 
 span:hover {
