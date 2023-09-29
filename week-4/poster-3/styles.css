@@ -211,8 +211,8 @@ border-radius: 26% 81% 17% 95% / 61% 93% 49% 63% ;
     to {opacity: 9%;}
 }
 
-.mitski {width: 700px;
-    height: 850px;
+.mitski {width: 730px;
+    height: 820px;
 left: 48%;
 transform: translateX(-50%);
 position: absolute;
@@ -220,7 +220,7 @@ background-size: 80%;
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 50%;
-top: 60px;
+top: 90px;
 animation: 2s alternate infinite linear opacity,
 10s alternate infinite linear rotation;
 z-index: 0;
@@ -433,13 +433,8 @@ transition: 0.2s;
     }
 
 
- .mitski:hover {
-box-shadow: 
-0px -10px 40px 100px #762525 inset;
 
- }
 
- .mitski:hover ~ .scribble {height: 900px; top:-25px; width: 550px;}
 
 
  
