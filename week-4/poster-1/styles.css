@@ -28,8 +28,8 @@ body{
     box-shadow: inset 10px 10px 20px #a5a7a9, inset -10px -10px 20px #ffffff;
    pointer-events: none;
    background-color: rgba(255, 255, 255, 0.485);
-    top: 45%;
-    opacity: 40%;
+    top: 48%;
+    opacity: 60%;
     z-index: 999;
     left: 48%;
     transform: translateX(-50%) translateY(-50%);
@@ -48,8 +48,8 @@ body{
         height: 20px;
      }
      100% {
-        width: 600px;
-        height: 800px;
+        width: 650px;
+        height: 850px;
         opacity: 0;
 }
 }
