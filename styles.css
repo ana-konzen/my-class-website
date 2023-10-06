@@ -85,12 +85,9 @@ a {
 
 
     .big {display: none;}
-    .small {display: block;
-position: fixed;}
+    .small {display: block;}
 
     .thingies {
-    
-        width: 50%;
 
         position: absolute;
         left: 50vw;
