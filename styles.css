@@ -96,8 +96,6 @@ position: fixed;}
     .thingies {
     
         width: 50%;
-        height: 100%;
-        overflow: scroll;
 
         position: absolute;
         left: 50vw;
