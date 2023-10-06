@@ -82,15 +82,10 @@ a {
 
 @media screen and (max-width: 600px) {
 
-    body { overflow: scroll;
-        height: 1000px;
-    width: 100vw;}
+
 
     .big {display: none;}
     .small {display: block;
-        overflow: scroll;
-    height: 100%;
-width: 100vw;
 position: fixed;}
 
     .thingies {
