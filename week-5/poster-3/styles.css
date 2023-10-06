@@ -1,0 +1,964 @@
+body{
+    
+    /* background-image: linear-gradient(#a4acb4c3 0%, #171d24d6 20%, #171d24eb 70%); */
+    margin: 0px;
+    background-color: #762525;
+   
+    perspective: 500px;
+
+  }
+
+
+  .bigdiv {
+    perspective: 800px;
+    height: 100vh;
+    top: 10px;
+    width: 100vw;
+    left: 50vw;
+    transform: translate(-50%);
+    position: relative;
+    overflow: hidden;
+  }
+
+
+.scrollies:hover ~ .water {
+    animation:  4s ease-in-out infinite alternate water,
+    0s ease-in-out infinite alternate borderr;
+}
+
+.s1:hover ~ .water {
+    border-radius: 71% 40% 76% 48% / 58% 80% 40% 64% ;
+}
+
+
+.s2:hover ~ .water {
+    border-radius: 26% 81% 17% 95% / 61% 93% 49% 63% ;
+    }
+    
+    .s2:hover ~ .high {
+        transform:  rotate(10deg);
+        left: calc(50vw - 90px);
+        width: 600px;
+        height: 800px;
+        top: calc(460px + 30px);
+    
+    border-radius: 20% 82% 37% 50% / 31% 90% 15% 67% ;
+    }
+    
+    .s2:hover ~ .light {
+        left: calc(50vw - 180px);
+        width: 10px;
+        top: 50px;
+    }
+
+    .s3:hover ~ .water {
+        border-radius: 85% 91% 85% 97% / 91% 93% 80% 92% ;
+        }
+
+        .s3:hover ~ .high {
+            transform:  rotate(10deg);
+            left: calc(50vw - 110px);
+            width: 600px;
+            height: 800px;
+            top: calc(460px + 20px);
+        
+            border-radius: 45% 91% 85% 97% / 91% 93% 80% 92% ;
+
+        }
+        
+        .s3:hover ~ .light {
+            left: calc(50vw - 110px);
+            top: 110px;
+        }
+
+
+        .s4:hover ~ .water {
+            border-radius: 83% 55% 100% 55% / 93% 60% 100% 30%  ;
+            }
+    
+            .s4:hover ~ .high {
+                transform:  rotate(10deg);
+                left: calc(50vw - 50px);
+                width: 600px;
+        height: 800px;
+                top: 500px;
+            
+                border-radius: 63% 45% 100% 55% / 53% 60% 100% 30%  ;
+    
+            }
+            
+            .s5:hover ~ .light {
+                left: calc(50vw - 90px);
+                top: 130px;
+            }
+
+            .s5:hover ~ .water {
+                border-radius: 66% 79% 46% 80% / 81% 69% 70% 59%  ;
+                }
+        
+                .s5:hover ~ .high {
+                    transform:  rotate(10deg);
+                    left: calc(50vw - 70px);
+                    width: 600px;
+                    height: 850px;
+                    top: 540px;
+                
+                    border-radius: 50% 13% 0% 51% / 38% 85% 71% 87% ;
+        
+                }
+                
+                .s5:hover ~ .light {
+                    left: calc(50vw - 130px);
+                    top: 90px;
+                }
+
+                .s6:hover ~ .water {
+                    border-radius: 75% 47% 38% 88% / 38% 67% 58% 27%  ;
+                    }
+            
+                    .s6:hover ~ .high {
+                        transform:  rotate(10deg);
+                        left: calc(50vw - 120px);
+                        width: 600px;
+                        height: 850px;
+                        top: 540px;
+                    
+                        border-radius: 49% 90% 38% 88% / 38% 67% 58% 27%  ;
+            
+                    }
+                    
+                    .s6:hover ~ .light {
+                        left: calc(50vw - 200px);
+                        width: 10px;
+                        top: 110px;
+                    }
+
+
+                .s7:hover ~ .water {
+                    border-radius: 36% 91% 38% 88% / 43% 67% 58% 32% ;
+                    }
+            
+                    .s7:hover ~ .high {
+
+                        left: calc(50vw - 190px);
+                        width: 500px;
+                        height: 900px;
+                        top: 540px;
+                    
+                        border-radius: 70% 100% 34% 88% / 91% 67% 58% 95%  ;
+        
+                    }
+
+                    .s7:hover ~ .light {
+                        left: calc(50vw - 160px);
+                        top: 70px;
+                        width: 10px;
+
+                    }
+                    
+                 
+
+                    .s8:hover ~ .water {
+                        border-radius: 66% 41% 34% 88% / 91% 67% 58% 32%;                        
+                        }
+                
+                        .s8:hover ~ .high {
+                            transform:  rotate(10deg);
+                            left: calc(50vw - 40px);
+                            width: 600px;
+                            height: 800px;
+                            top: 500px;
+                        
+                            border-radius: 70% 100% 34% 88% / 91% 67% 58% 95% ;
+                
+                        }
+                        
+                        .s8:hover ~ .light {
+                            left: calc(50vw - 85px);
+                            top: 90px;
+                        }
+                    
+
+
+                    .s9:hover ~ .water {
+                        border-radius: 39% 97% 34% 88% / 91% 67% 58% 39%                       
+                        }
+                
+                        .s9:hover ~ .high {
+                            transform:  rotate(10deg);
+                            left: calc(50vw - 130px);
+                            width: 500px;
+                            height: 800px;
+                            top: 510px;
+                        
+                            border-radius: 21% 99% 39% 92% / 75% 95% 30% 65% ;
+                
+                        }
+                        
+                        .s9:hover ~ .light {
+                            left: calc(50vw - 170px);
+                            top: 80px;
+                        }
+
+
+
+@keyframes light2
+{ 12.5% {left: calc(50vw - 100px);
+    top: 90px;
+    width: 15px;
+   
+}
+
+25% {
+    left: calc(50vw - 170px);
+    top: 80px;
+    width: 15px;
+         
+
+}
+
+    37.5% {
+        left: calc(50vw - 180px);
+        width: 10px;
+        top: 50px;
+}
+
+50% {
+    left: calc(50vw - 85px);
+    top: 90px;
+    width: 15px;
+
+
+}
+
+62.5% {
+    left: calc(50vw - 100px);
+    top: 90px;
+    width: 15px;
+
+
+
+}
+
+75% {
+    left: calc(50vw - 130px);
+    top: 90px;
+    width: 15px;
+
+
+
+}
+
+87.5% {
+    left: calc(50vw - 200px);
+    width: 10px;
+    top: 110px;
+
+
+}
+
+100% {
+    left: calc(50vw - 160px);
+    top: 70px;
+    width: 10px;
+
+
+}}
+
+@keyframes high2
+{
+    12.5% {
+        border-radius: 42% 52% 76% 48% / 58% 76% 50% 64% ;
+        left: calc(50vw - 10px);
+        top: 500px;
+        width: 700px;
+            height: 760px;
+    }
+
+    25% {
+        transform:  rotate(10deg);
+        left: calc(50vw - 130px);
+        width: 500px;
+        height: 800px;
+        top: 510px;
+    
+        border-radius: 21% 99% 39% 92% / 75% 95% 30% 65% ;
+             
+
+    }
+
+        37.5% {
+            transform:  rotate(10deg);
+            left: calc(50vw - 90px);
+            width: 600px;
+            height: 800px;
+            top: calc(460px + 30px);
+        
+        border-radius: 20% 82% 37% 50% / 31% 90% 15% 67% ;
+
+    }
+
+    50% {
+        transform:  rotate(10deg);
+                            left: calc(50vw - 40px);
+                            width: 600px;
+                            height: 800px;
+                            top: 500px;
+                        
+                            border-radius: 70% 100% 34% 88% / 91% 67% 58% 95% ;
+                                      
+
+
+    }
+
+    62.5% {
+        transform:  rotate(10deg);
+                left: calc(50vw - 50px);
+                width: 600px;
+        height: 800px;
+                top: 500px;
+            
+                border-radius: 63% 45% 100% 55% / 53% 60% 100% 30%  ;
+                         
+
+
+    }
+
+    75% {
+        transform:  rotate(10deg);
+        left: calc(50vw - 70px);
+        width: 600px;
+        height: 850px;
+        top: 540px;
+        border-radius: 50% 13% 0% 51% / 38% 85% 71% 87% ;
+
+
+
+    }
+
+    87.5% {
+        transform:  rotate(10deg);
+        left: calc(50vw - 120px);
+        width: 600px;
+        height: 850px;
+        top: 540px;
+    
+        border-radius: 49% 90% 38% 88% / 38% 67% 58% 27%  ;
+
+
+
+    }
+
+    100% {
+        left: calc(50vw - 190px);
+        width: 500px;
+        height: 900px;
+        top: 540px;
+        border-radius: 70% 100% 34% 88% / 91% 67% 58% 95%  ;
+
+
+    }
+}
+@keyframes border2
+{
+    12.5% {
+        border-radius: 71% 40% 76% 48% / 58% 80% 40% 64% ;
+
+    }
+
+    25% {
+        border-radius: 39% 97% 34% 88% / 91% 67% 58% 39%                       
+
+    }
+
+        37.5% {
+            border-radius: 26% 81% 17% 95% / 61% 93% 49% 63% ;
+
+
+    }
+
+    50% {
+        border-radius: 66% 41% 34% 88% / 91% 67% 58% 32%;                        
+                      
+
+
+    }
+
+    62.5% {
+        border-radius: 83% 55% 100% 55% / 93% 60% 100% 30%  ;
+                   
+
+
+    }
+
+    75% {
+        border-radius: 66% 79% 46% 80% / 81% 69% 70% 59%  ;
+
+
+
+
+    }
+
+    87.5% {
+        border-radius: 75% 47% 38% 88% / 38% 67% 58% 27%  ;
+
+
+
+    }
+
+    100% {
+        border-radius: 36% 91% 38% 88% / 43% 67% 58% 32% ;
+
+
+
+    }
+}
+
+
+
+.water {
+    opacity: 30%;
+    border: 2px rgba(255, 255, 255) solid;
+    box-shadow: 
+    inset 0px 0px 10px 2px rgba(253, 226, 226),
+     inset 10px 30px 40px 20px rgba(255, 181, 181);
+     border-radius: 71% 40% 76% 48% / 58% 80% 40% 64% ;
+     /* border-radius: 71% 40% 96% 48% / 58% 80% 90% 64% ; */
+transition: 1s;
+     width: 600px;
+	height: 800px;
+     position: fixed;
+     top: 460px;
+     z-index: 999;
+     left: 50vw;
+     pointer-events: none;
+     transform: translateX(-50%) translateY(-50%);
+    background: radial-gradient(ellipse at 30% 20%,  rgba(255, 255, 255) 0%,#76252560 90%);
+    animation:  4s ease-in-out infinite alternate water;
+    /* 4s ease-in-out infinite alternate borderr; */
+}
+
+@keyframes borderr {
+    to {
+        border-width: 1px;
+border-radius: 26% 81% 17% 95% / 61% 93% 49% 63% ;
+}
+}
+
+
+
+.high { 
+    border-radius: 42% 52% 76% 48% / 58% 76% 50% 64% ;
+    background: radial-gradient(ellipse 400% 400% at 90px 30px, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, #76252500 8%);
+     transform:  rotate(10deg) translateX(-50%) translateY(-50%);
+        left: calc(50vw - 10px);
+        top: 500px;
+        width: 700px;
+            height: 760px;
+    position: fixed;
+    opacity: 50%;
+transition: 1s;
+pointer-events: none;
+
+
+    z-index: 9999;
+    animation:  4s ease-in-out infinite alternate highh;
+
+}
+
+.light {
+position: fixed;
+opacity: 60%;
+height: 30px;
+transition: 1s;
+pointer-events: none;
+transform: rotate(60deg) translateX(-50%) translateY(-50%);
+left: calc(50vw - 100px);
+top: 90px;
+width: 15px;
+border-radius: 50%;
+z-index: 9999;
+animation:  4s ease-in-out infinite alternate light1;
+box-shadow: 
+0px 0px 3px 3px rgba(255, 255, 255, 0.658),
+0px 0px 9px 8px rgba(255, 255, 255, 0.659),
+5px 0px 20px 20px rgba(125, 50, 50, 0.077);
+background-color: rgba(255, 255, 255, 0.924);
+
+}
+
+.buryh:hover ~ .light {
+    opacity: 80%;
+    animation:  16s ease-in-out infinite alternate light2,
+    4s ease-in-out infinite alternate light1;
+
+}
+
+.buryh:hover ~ .water {
+    animation:  4s ease-in-out infinite alternate water,
+    16s ease-in-out infinite alternate border2;
+
+    opacity: 40%;
+}
+
+.buryh:hover ~ .high {opacity: 80%;
+    animation:  16s ease-in-out infinite alternate high2,
+    4s ease-in-out infinite alternate highh;
+
+}
+
+.s10:hover ~ .light {
+    opacity: 80%;
+animation:  16s ease-in-out infinite alternate light2,
+4s ease-in-out infinite alternate light1;
+
+}
+
+.s10:hover ~ .water {
+    animation:  4s ease-in-out infinite alternate water,
+    16s ease-in-out infinite alternate border2;
+    opacity: 40%;
+}
+
+.s10:hover ~ .high {opacity: 80%;
+    animation:  16s ease-in-out infinite alternate high2,
+    4s ease-in-out infinite alternate highh;
+
+}
+
+@keyframes lightt {
+    0% {
+        transform: rotate(50deg) translateX(-50%) translateY(-50%);
+left: calc(50vw - 100px);
+        
+        top: 160px;
+    }
+
+        100% {
+            transform: rotate(60deg) translateX(-50%) translateY(-50%);
+            left: calc(50vw - 140px);
+            top: 90px;
+}
+}
+
+@keyframes light1 {
+    0% {
+        transform: rotate(60deg) rotateY(-2deg) rotateX(2deg) translateX(-30%) translateY(-20%);
+       
+    }
+
+    50% {
+        transform: rotate(60deg) rotateY(0deg) rotateX(0deg) translateX(-50%) translateY(-40%);
+        
+
+    }
+
+        100% {
+            transform: rotate(60deg) rotateY(-2deg) rotateX(-2deg) translateX(-50%) translateY(-40%);
+          
+
+    }
+
+}
+
+
+@keyframes high {  
+
+    0% {
+        transform:  rotate(10deg) translateX(-50%) translateY(-50%);
+        left: calc(50vw - 10px);
+        top: 505px;
+        width: 600px;
+            height: 660px;
+    }
+
+    /* 50% {
+        transform:  rotate(20deg) rotateY(0deg) rotateX(0deg) translateY(-50%);
+        left: 21%;
+        top: 30%;
+    } */
+
+        100% {
+            transform:  rotate(10deg) translateX(-50%) translateY(-50%);
+            left: calc(50vw - 75px);
+            width: 500px;
+            height: 700px;
+            top: 485px;
+        border-radius: 20% 82% 37% 50% / 31% 90% 15% 67% ;
+    }
+       
+}
+
+@keyframes highh {  
+
+    0% {
+        transform: rotate(10deg) rotateY(-1deg) rotateX(1deg) translateX(-50%) translateY(-50%);
+    }
+
+    50% {
+        transform: rotate(10deg) rotateY(0deg) rotateX(0deg) translateX(-50%) translateY(-50%);
+
+    }
+
+        100% {
+            transform: rotate(10deg) rotateY(-1deg) rotateX(-1deg) translateX(-50%) translateY(-50%);
+
+    }
+       
+}
+
+@keyframes water 
+{
+    0% {
+        transform: rotateY(-1deg) rotateX(1deg) translateX(-50%) translateY(-50%);
+    }
+
+    50% {
+        transform: rotateY(0deg) rotateX(0deg) translateX(-50%) translateY(-50%);
+
+    }
+
+        100% {
+            transform: rotateY(-1deg) rotateX(-1deg) translateX(-50%) translateY(-50%);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes opacity {
+    from {opacity: 20%;}
+
+    to {opacity: 9%;}
+}
+
+.mitski {width: 730px;
+    height: 900px;
+left: 50%;
+transform: translateX(-50%);
+position: absolute;
+pointer-events: none;
+background-size: 80%;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 50%;
+top: 60px;
+animation: 2s alternate infinite linear opacity,
+10s alternate infinite linear rotation;
+z-index: 0;
+background-image: url("Untitled-3.png");
+box-shadow: 
+ -30px -30px 20px 100px #762525 inset;
+transition: 0.2s;
+
+ }
+
+ .mitski2 {width: 600px;
+    height: 850px;
+left: 50%;
+transform: translateX(-50%);
+position: absolute;
+background-size: 80%;
+pointer-events: none;
+
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 50%;
+top: 0px;
+animation: 2s alternate infinite linear ripple;
+z-index: 1;
+transition: 0.2s;
+
+ }
+
+ @keyframes ripple {
+    from {box-shadow: 10px 0px 20px 70px #762525 inset;
+    }
+    to {box-shadow: 10px 0px 30px 100px #762525 inset;
+    ;}
+
+ }
+
+ @keyframes opacity {
+    0% {
+    opacity: 80%;
+    }
+50% {
+    opacity: 80%;
+    }
+    100% {
+    opacity: 60%;
+    }
+
+ }
+
+ @keyframes rotation {
+    0% {
+    transform: translateX(-50%) rotateY(-10deg) rotateX(8deg);
+
+}
+50% {
+    transform: translateX(-50%) rotateY(0deg) rotateX(0deg);
+
+}
+    100% {
+    transform: translateX(-50%) rotateY(-10deg) rotateX(-10deg);
+}
+
+ }
+
+        
+ .scrollies {
+    top: 0px;
+    width: 100vw;
+    left: 0;
+    height: 5vh;
+    position: relative;
+    }       
+
+
+
+
+
+
+
+
+.scrollies:hover {
+    font-variation-settings: "ital" 0, "wdth" 100, "wght" 300;
+
+}
+
+
+.s10:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 400px #762525 inset;
+
+     }
+/* 
+.s7:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 330px #762525 inset;
+     }
+
+.s6:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 300px #762525 inset;
+     }
+
+.s5:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 270px #762525 inset;
+     }
+
+
+.s4:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 240px #762525 inset;
+     }
+
+.s8:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 210px #762525 inset;
+     }
+
+.s2:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 190px #762525 inset;
+     }
+
+.s9:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 160px #762525 inset;
+     }
+
+
+.m2:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 40px 130px #762525 inset;
+     }
+
+
+.s1:hover ~ .mitski {
+    box-shadow: 
+    -25px -10px 20px 100px #762525 inset;
+    } */
+
+
+
+
+
+
+ 
+ .tour {
+    top: 40px;
+    font-family: pf-grand-gothik-variable, sans-serif;
+    font-variation-settings: "ital" 0, "wdth" 100, "wght" 100;
+    font-size: 22px;
+    letter-spacing: 10px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    z-index: 99;
+    pointer-events: none;
+    transition: 2s;
+    }
+
+
+    .location {
+        font-family: pf-grand-gothik-variable, sans-serif;
+    font-variation-settings: "ital" 0, "wdth" 100, "wght" 100;
+        font-size: 20px;
+        color: white;
+        transition: 0.1s;
+        position: fixed;
+        pointer-events: none;
+        width: 900px;
+        text-align: center;
+        z-index: 9999;
+        bottom: 40px;
+        letter-spacing: 8px;
+        left: 50vw;
+        transform: translateX(-50%);
+        line-height: 40px;
+    }
+    
+    .location span {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .bury {
+        width: 23px;
+        text-align: center;
+        color: white;
+        position: relative;
+        bottom: 950px;
+        transition: 1s;
+        pointer-events: none;
+        left: 0;
+        margin-bottom: 7px; 
+        border-left: solid transparent calc(50vw - 388px);
+        font-family: pf-grand-gothik-variable, sans-serif;
+        font-variation-settings: "ital" 0, "wdth" 100, "wght" 100;
+        font-size: 21px;
+        z-index: 999;
+        }
+        
+        
+        
+        .buryh {
+            width: 45px;
+            height: 100px;
+            float: left;
+            transition: 1s;
+            position: relative;
+            bottom: 80px;
+            /* background-color: #982a2a; */
+            left: calc(50vw - 450px);
+            /* left: 35px; */
+            z-index: 98;
+            }
+        
+        
+        
+        .bh20 {border-right: solid transparent 30vw;}
+        
+        .bh1:hover ~ .b1 { border-left: solid transparent calc(50vw + 355px);}
+        .bh2:hover ~ div.bury:nth-last-of-type(n+28) { border-left: solid transparent calc(50vw + 355px);}
+        .bh3:hover ~ div.bury:nth-last-of-type(n+27) { border-left: solid transparent calc(50vw + 355px);}
+        .bh4:hover ~ div.bury:nth-last-of-type(n+26) { border-left: solid transparent calc(50vw + 355px);}
+        .bh5:hover ~ div.bury:nth-last-of-type(n+25) { border-left: solid transparent calc(50vw + 355px);}
+        .bh6:hover ~ div.bury:nth-last-of-type(n+24) { border-left: solid transparent calc(50vw + 355px);}
+        .bh7:hover ~ div.bury:nth-last-of-type(n+23) { border-left: solid transparent calc(50vw + 355px);}
+        .bh8:hover ~ div.bury:nth-last-of-type(n+22) { border-left: solid transparent calc(50vw + 355px);}
+        .bh9:hover ~ div.bury:nth-last-of-type(n+21) { border-left: solid transparent calc(50vw + 355px);}
+        .bh10:hover ~ div.bury:nth-last-of-type(n+20) { border-left: solid transparent calc(50vw + 355px);}
+        .bh11:hover ~ div.bury:nth-last-of-type(n+19) { border-left: solid transparent calc(50vw + 355px);}
+        .bh12:hover ~ div.bury:nth-last-of-type(n+18) { border-left: solid transparent calc(50vw + 355px);}
+        .bh13:hover ~ div.bury:nth-last-of-type(n+17) { border-left: solid transparent calc(50vw + 355px);}
+        .bh14:hover ~ div.bury:nth-last-of-type(n+16) { border-left: solid transparent calc(50vw + 355px);}
+        .bh15:hover ~ div.bury:nth-last-of-type(n+15) { border-left: solid transparent calc(50vw + 355px);}
+        .bh16:hover ~ div.bury:nth-last-of-type(n+14) { border-left: solid transparent calc(50vw + 355px);}
+        .bh17:hover ~ div.bury:nth-last-of-type(n+13) { border-left: solid transparent calc(50vw + 355px);}
+        .bh18:hover ~ div.bury:nth-last-of-type(n+12) { border-left: solid transparent calc(50vw + 355px);}
+        .bh19:hover ~ div.bury:nth-last-of-type(n+11) { border-left: solid transparent calc(50vw + 355px);}
+        .bh20:hover ~ div.bury:nth-last-of-type(n+10) {border-left: solid transparent calc(50vw + 355px);
+        }
+        
+        
+        .buryh:hover ~ .mitski {
+            box-shadow: 0px -10px 40px 400px  #762525 inset;
+        }
+        
+       
+        
+        
+        
+        .space {margin-bottom: 40px;}
+
+
+
+    .s1:hover ~ .tour {
+        letter-spacing: 135px;
+        transform: translateX(calc(-50% + 4vw));
+        font-variation-settings: "ital" 0, "wdth" 150, "wght" 100;
+        
+        }
+        
+        .s2:hover ~ .tour {
+            letter-spacing: 135px;
+        transform: translateX(calc(-50% + 4vw));
+        
+            font-variation-settings: "ital" 0, "wdth" 150, "wght" 100;
+            
+            }
+        
+        .s19:hover ~ .tour {
+                letter-spacing: 135px;
+        transform: translateX(calc(-50% + 4vw));
+        
+                font-variation-settings: "ital" 0, "wdth" 150, "wght" 100;
+                
+                }
+        
+        .s20:hover ~ .tour {
+            letter-spacing: 135px;
+        transform: translateX(calc(-50% + 4vw));
+        
+            font-variation-settings: "ital" 0, "wdth" 150, "wght" 100;
+            
+            }
+        
+            .buryh:hover ~ .tour {
+                letter-spacing: 135px;
+        transform: translateX(calc(-50% + 4vw));
+        
+                font-variation-settings: "ital" 0, "wdth" 150, "wght" 100;
+                
+                }
+
+                .s19:hover ~ .location {
+                    font-variation-settings: "ital" 100, "wdth" 100, "wght" 100;
+                }
+                
+                .s20:hover ~ .location {
+                    font-variation-settings: "ital" 100, "wdth" 100, "wght" 100;
+                
+                }
+                
+                .buryh:hover ~ .location {
+                    font-variation-settings: "ital" 100, "wdth" 100, "wght" 100;
+                
+                }
+        
+
+
