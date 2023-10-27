@@ -1,0 +1,63 @@
+#container {
+    /* background-color: #EFDEC6; */
+    height: 50vh;
+    width: 50vh;
+    left: 50vw;
+    top: 200px;
+    display: flex;
+    position: fixed;
+    transform: translateX(-50%);
+
+
+}
+
+.letter {color: #AF3034;
+    font-size: 130px;
+    /* background-color: aliceblue; */
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    transition: top 2s, left 2s;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    font-family: "latino-gothic-variable", sans-serif;
+    font-variation-settings: "slnt" 1, "wdth" 60, "wght" 80;
+}
+
+
+
+#a {top: 20%;
+    left: 20%;
+    color: #AF3034;}
+    
+    #l {top: 40%;
+    left: 40%;
+    color: #AF3034;}
+    
+    #b {top: 60%;
+    left: 60%;
+    color: #AF3034;}
+    
+    #a2 {
+        top: 80%;
+        left: 80%;
+        color: #AF3034;
+    }
+    
+    .lines {color: #AF3034;}
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+

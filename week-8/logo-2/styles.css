@@ -1,0 +1,37 @@
+#container {
+    /* background-color: #EFDEC6; */
+    height: 50vh;
+    width: 50vw;
+    left: 50vw;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+  
+    position: fixed;
+    transform: translateX(-50%);
+
+
+}
+
+.letter {color: #AF3034;
+    font-size: 130px;
+    /* background-color: aliceblue; */
+
+
+    letter-spacing: 4px;
+
+    position: relative;
+    font-family: "latino-gothic-variable", sans-serif;
+    font-variation-settings: "slnt" 1, "wdth" 60, "wght" 70;
+}
+
+#m {margin-right: 10px;}
+
+
+
+
+
+
+
+
+
