@@ -85,8 +85,31 @@ blob3.style.left = Math.random() * 60  + "%";
 blob3.style.top = Math.random() * 50 + "%";
 }, 2000);
 
+function black () {
+    m.style.color = "black";
+    a.style.color = "black";
+    l.style.color = "black";
+    b.style.color = "black";
+    a2.style.color = "black";
+    lines.style.color = "black";
 
-button2.style.display = "none";
+}
+
+function white () {
+m.style.color = null;
+a.style.color = null;
+l.style.color = null;
+b.style.color = null;
+a2.style.color = null;
+lines.style.color = null;
+  
+}
+
+
+button.addEventListener("click", black);
+button2.addEventListener("click", white);
+
+
 
 
 // m.style.left = Math.floor(Math.random() * (100 / 20)) * 20 + "%";
