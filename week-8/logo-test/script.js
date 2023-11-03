@@ -9,7 +9,13 @@ let button = document.getElementById("button");
 let button2 = document.getElementById("button2");
 let button3 = document.getElementById("button3");
 let button4 = document.getElementById("button4");
+let button5 = document.getElementById("button5");
+let button6 = document.getElementById("button6");
+let button7 = document.getElementById("button7");
+let button8 = document.getElementById("button8");
+
 let r = document.querySelector(':root');
+
 
 
 let grid = document.getElementById("grid");
@@ -20,28 +26,39 @@ let lines = document.querySelectorAll(".line");
 
 
 
+
+
+
+
 let squareM = squares[0];
 let squareA = squares[1];
 let squareL = squares[2];
 let squareB = squares[3];
 let squareA2 = squares[4];
 
-let line0 = lines[0];
-
-let lineM = lines[1];
-
-let lineA = lines[2];
-
-let lineL = lines[3];
-
-let lineB = lines[4];
-
-let lineA2 = lines[5];
+squareM.style.zIndex = "1";
+squareA.style.zIndex = "1";
+squareL.style.zIndex = "1";
+squareB.style.zIndex = "1";
+squareA2.style.zIndex = "1";
 
 
 
 
-console.log(lineA);
+let lineM = lines[0];
+
+let lineA = lines[1];
+
+let lineL = lines[2];
+
+let lineB = lines[3];
+
+let lineA2 = lines[4];
+
+
+
+
+
 
 // let lineA = document.getElementById("line");
 
@@ -52,11 +69,14 @@ console.log(lineA);
 // squareB.classList.add("b");
 // squareA2.classList.add("a2");
 
-let xM = Math.random() * 50 - 100; 
+let xM = Math.random() * 300 - 60;
+
+console.log( xM );
+
 let yM = Math.random() * 450; 
 
 
-let distA = Math.random() * 150 + 50; 
+let distA = Math.random() * 300 + 60; 
 
 
 let max = Math.PI/2;
@@ -78,16 +98,19 @@ console.log(Math.sin(angA));
 console.log(angA);
 
 let yA = yM + (distA * Math.sin(angA));
+let xA = xM + (distA * Math.cos(angA));
 
-
-while((yA < 0) || (yA > 500)) {
+while((yA < 0) || (yA > 600) || (xA > 420)) {
 
     angA = Math.random() * (max - min) + min;
+distA = Math.random() * 300 + 60; 
+
 yA = yM + (distA * Math.sin(angA));
+xA = xM + (distA * Math.cos(angA));
  
    };
 
-   let xA = xM + (distA * Math.cos(angA));
+
 
 
 
@@ -97,84 +120,531 @@ squareM.style.top = yM + "px";
 squareA.style.left = xA + "px";
 squareA.style.top = yA + "px";
 
-let distL = Math.random() * 150 + 50; 
+let distL = Math.random() * 300 + 60; 
 
 let angL = Math.random() * max + min;
 
 let yL = yA + (distL * Math.sin(angL));
+let xL = xA + (distL * Math.cos(angL));
 
-while((yL < 0) || (yL > 500)) {
+
+while((yL < 0) || (yL > 600) || (xL > 480)) {
 
     angL = Math.random() * (max - min) + min;
+distL = Math.random() * 300 + 60; 
+
     yL = yA + (distL * Math.sin(angL));
+   xL = xA + (distL * Math.cos(angL));
+
  
    };
 
-   let xL = xA + (distL * Math.cos(angL));
 
 
 squareL.style.left = xL + "px";
 squareL.style.top = yL + "px";
 
 
-let distB = Math.random() * 150 + 50; 
+let distB = Math.random() * 300 + 60; 
 
 let angB = Math.random() * max + min;
 
 let yB = yL + (distB * Math.sin(angB));
+let xB = xL + (distB* Math.cos(angB));
 
-while((yB < 0) || (yB > 500)) {
+
+while((yB < 0) || (yB > 600) || (xB > 540)) {
 
     angB = Math.random() * max + min;
+distB = Math.random() * 300 + 60; 
+
      yB = yL + (distB * Math.sin(angB));
+   xB = xL + (distB* Math.cos(angB));
+
    };
 
-   let xB = xL + (distB* Math.cos(angB));
 
    squareB.style.left = xB + "px";
    squareB.style.top = yB + "px";
 
-   let distA2 = Math.random() * 150 + 50; 
+   let distA2 = Math.random() * 300 + 60; 
 
    let angA2 = Math.random() * max + min;
    
    let yA2 = yB + (distA2 * Math.sin(angA2));
+   let xA2 = xB + (distA2* Math.cos(angA2));
+
+
    
-   while((yA2 < 0) || (yA2 > 500)) {
+   while((yA2 < 0) || (yA2 > 600) || (xA2 > 600)) {
    
-       angA2 = Math.random() * max + min;
-        yA2 = yB + (distA2 * Math.sin(angA2));
+    angA2 = Math.random() * max + min;
+distA2 = Math.random() * 300 + 60; 
+
+    xA2 = xB + (distA2* Math.cos(angA2));
+
+
+    yA2 = yB + (distA2 * Math.sin(angA2));
+
       };
    
-      let xA2 = xB + (distA2* Math.cos(angA2));
-   
+     
+      
       squareA2.style.left = xA2 + "px";
+   
       squareA2.style.top = yA2 + "px";
 
 
-let angM = Math.random() * 2 * Math.PI;
-let distM = Math.random() * 150 + 50; 
 
-line0.style.transform = " rotate(" + angM + "rad)";
-line0.style.width = distM + "px";
+let angM =  newAng = (xM - xA2 < 0) * Math.PI + Math.atan((yM - yA2)/(xM - xA2));
+let distM = (yM - yA2) / Math.sin(angM);
+
 
 lineM.style.transform = " rotate(" + angA + "rad)";
 lineM.style.width = distA + "px";
 
+
+
 lineA.style.transform = " rotate(" + angL + "rad)";
 lineA.style.width = distL + "px";
 
+
 lineL.style.transform = " rotate(" + angB + "rad)";
 lineL.style.width = distB + "px";
+// lineL.style.left = "20px";
 
 lineB.style.transform = " rotate(" + angA2 + "rad)";
 lineB.style.width = distA2 + "px";
 
-lineA2.style.transform = " rotate(" + -angM + "rad)";
+
+lineA2.style.transform = " rotate(" + angM + "rad)";
 lineA2.style.width = distM + "px";
 
+
+
+
+
+
+
+
+
+
+let palette = ["#AF3034", "#EEBE46", "#036848", "#2B3C7E", "#6CA8D9"];
+
+
+
+
+// squareM.style.fontSize = Math.random() * 50 + 60 + "px";
+// squareA.style.fontSize = Math.random() * 50 + 60 + "px";
+// squareL.style.fontSize = Math.random() * 50 + 60 + "px";
+// squareB.style.fontSize = Math.random() * 50 + 60 + "px";
+// squareA2.style.fontSize = Math.random() * 50 + 60 + "px";
+
+
+
 lineA2.classList.add("no");
-line0.classList.add("no");
+
+button0.onclick = function(){
+    let xM = Math.random() * 300 - 60;
+
+console.log( xM );
+
+let yM = Math.random() * 450; 
+
+
+let distA = Math.random() * 300 + 60; 
+
+
+let max = Math.PI/2;
+
+let min = -Math.PI/2;
+
+let angA = Math.random() * (max - min) + min;
+
+// angA = Math.PI/6;
+
+console.log(max);
+console.log(min);
+console.log(distA);
+console.log(distA / 2);
+
+
+console.log(Math.sin(angA));
+
+console.log(angA);
+
+let yA = yM + (distA * Math.sin(angA));
+let xA = xM + (distA * Math.cos(angA));
+
+while((yA < 0) || (yA > 600) || (xA > 420)) {
+
+    angA = Math.random() * (max - min) + min;
+distA = Math.random() * 300 + 60; 
+
+yA = yM + (distA * Math.sin(angA));
+xA = xM + (distA * Math.cos(angA));
+ 
+   };
+
+
+
+
+
+squareM.style.left = xM + "px";
+squareM.style.top = yM + "px";
+
+squareA.style.left = xA + "px";
+squareA.style.top = yA + "px";
+
+let distL = Math.random() * 300 + 60; 
+
+let angL = Math.random() * max + min;
+
+let yL = yA + (distL * Math.sin(angL));
+let xL = xA + (distL * Math.cos(angL));
+
+
+while((yL < 0) || (yL > 600) || (xL > 480)) {
+
+    angL = Math.random() * (max - min) + min;
+distL = Math.random() * 300 + 60; 
+
+    yL = yA + (distL * Math.sin(angL));
+   xL = xA + (distL * Math.cos(angL));
+
+ 
+   };
+
+
+
+squareL.style.left = xL + "px";
+squareL.style.top = yL + "px";
+
+
+let distB = Math.random() * 300 + 60; 
+
+let angB = Math.random() * max + min;
+
+let yB = yL + (distB * Math.sin(angB));
+let xB = xL + (distB* Math.cos(angB));
+
+
+while((yB < 0) || (yB > 600) || (xB > 540)) {
+
+    angB = Math.random() * max + min;
+distB = Math.random() * 300 + 60; 
+
+     yB = yL + (distB * Math.sin(angB));
+   xB = xL + (distB* Math.cos(angB));
+
+   };
+
+
+   squareB.style.left = xB + "px";
+   squareB.style.top = yB + "px";
+
+   let distA2 = Math.random() * 300 + 60; 
+
+   let angA2 = Math.random() * max + min;
+   
+   let yA2 = yB + (distA2 * Math.sin(angA2));
+   let xA2 = xB + (distA2* Math.cos(angA2));
+
+
+   
+   while((yA2 < 0) || (yA2 > 600) || (xA2 > 600)) {
+   
+    angA2 = Math.random() * max + min;
+distA2 = Math.random() * 300 + 60; 
+
+    xA2 = xB + (distA2* Math.cos(angA2));
+
+
+    yA2 = yB + (distA2 * Math.sin(angA2));
+
+      };
+   
+     
+      
+      squareA2.style.left = xA2 + "px";
+   
+      squareA2.style.top = yA2 + "px";
+
+
+
+let angM = (xM - xA2 < 0) * Math.PI + Math.atan((yM - yA2)/(xM - xA2));
+let distM = (yM - yA2) / Math.sin(angM);
+
+
+lineM.style.transform = " rotate(" + angA + "rad)";
+lineM.style.width = distA + "px";
+
+
+
+lineA.style.transform = " rotate(" + angL + "rad)";
+lineA.style.width = distL + "px";
+
+
+lineL.style.transform = " rotate(" + angB + "rad)";
+lineL.style.width = distB + "px";
+// lineL.style.left = "20px";
+
+lineB.style.transform = " rotate(" + angA2 + "rad)";
+lineB.style.width = distA2 + "px";
+
+
+lineA2.style.transform = " rotate(" + angM + "rad)";
+lineA2.style.width = distM + "px";
+
+
+
+};
+
+
+
+button.onclick = function multi(){
+squareM.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareA.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareL.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareB.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareA2.style.color = palette[Math.floor(Math.random() * palette.length)];
+lineM.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineA.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineL.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineB.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineA2.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];}
+
+let randomColor = palette[Math.floor(Math.random() * palette.length)];
+
+button2.onclick = function single(){
+randomColor = palette[Math.floor(Math.random() * palette.length)];
+
+squareM.style.color = randomColor;
+squareA.style.color = randomColor;
+squareL.style.color = randomColor;
+squareB.style.color = randomColor;
+squareA2.style.color = randomColor;
+lineM.style.backgroundColor = randomColor;
+lineA.style.backgroundColor = randomColor;
+lineL.style.backgroundColor = randomColor;
+lineB.style.backgroundColor = randomColor;
+lineA2.style.backgroundColor = randomColor;
+
+
+};
+
+button3.onclick = function red(){
+randomColor = null;
+    squareM.style.color = randomColor;
+squareA.style.color = randomColor;
+squareL.style.color = randomColor;
+squareB.style.color = randomColor;
+squareA2.style.color = randomColor;
+lineM.style.backgroundColor = randomColor;
+lineA.style.backgroundColor = randomColor;
+lineL.style.backgroundColor = randomColor;
+lineB.style.backgroundColor = randomColor;
+lineA2.style.backgroundColor = randomColor;
+
+};
+
+
+button4.onclick = function black(){
+    randomColor = "#000";
+        squareM.style.color = randomColor;
+    squareA.style.color = randomColor;
+    squareL.style.color = randomColor;
+    squareB.style.color = randomColor;
+    squareA2.style.color = randomColor;
+    lineM.style.backgroundColor = randomColor;
+    lineA.style.backgroundColor = randomColor;
+    lineL.style.backgroundColor = randomColor;
+    lineB.style.backgroundColor = randomColor;
+    lineA2.style.backgroundColor = randomColor;
+    
+    };
+
+    button5.onclick = function polygon(){
+
+        lineA2.classList.toggle("no");}
+    
+
+
+button6.onclick = function width(){
+    lineA.style.height = Math.random() * 7.7 + 0.3 + "px";
+lineL.style.height = Math.random() * 7.7 + 0.3 + "px";
+lineB.style.height = Math.random() * 7.7 + 0.3 + "px";
+lineA2.style.height = Math.random() * 7.7 + 0.3 + "px";
+lineM.style.height = Math.random() * 7.7 + 0.3 + "px";}
+
+
+
+button7.onclick = function(){
+    let xM = Math.random() * 300 - 60;
+
+console.log( xM );
+
+let yM = Math.random() * 450; 
+
+
+let distA = Math.random() * 300 + 60; 
+
+
+let max = Math.PI/2;
+
+let min = -Math.PI/2;
+
+let angA = Math.random() * (max - min) + min;
+
+// angA = Math.PI/6;
+
+console.log(max);
+console.log(min);
+console.log(distA);
+console.log(distA / 2);
+
+
+console.log(Math.sin(angA));
+
+console.log(angA);
+
+let yA = yM + (distA * Math.sin(angA));
+let xA = xM + (distA * Math.cos(angA));
+
+while((yA < 0) || (yA > 600) || (xA > 420)) {
+
+    angA = Math.random() * (max - min) + min;
+distA = Math.random() * 300 + 60; 
+
+yA = yM + (distA * Math.sin(angA));
+xA = xM + (distA * Math.cos(angA));
+ 
+   };
+
+
+
+
+
+squareM.style.left = xM + "px";
+squareM.style.top = yM + "px";
+
+squareA.style.left = xA + "px";
+squareA.style.top = yA + "px";
+
+let distL = Math.random() * 300 + 60; 
+
+let angL = Math.random() * max + min;
+
+let yL = yA + (distL * Math.sin(angL));
+let xL = xA + (distL * Math.cos(angL));
+
+
+while((yL < 0) || (yL > 600) || (xL > 480)) {
+
+    angL = Math.random() * (max - min) + min;
+distL = Math.random() * 300 + 60; 
+
+    yL = yA + (distL * Math.sin(angL));
+   xL = xA + (distL * Math.cos(angL));
+
+ 
+   };
+
+
+
+squareL.style.left = xL + "px";
+squareL.style.top = yL + "px";
+
+
+let distB = Math.random() * 300 + 60; 
+
+let angB = Math.random() * max + min;
+
+let yB = yL + (distB * Math.sin(angB));
+let xB = xL + (distB* Math.cos(angB));
+
+
+while((yB < 0) || (yB > 600) || (xB > 540)) {
+
+    angB = Math.random() * max + min;
+distB = Math.random() * 300 + 60; 
+
+     yB = yL + (distB * Math.sin(angB));
+   xB = xL + (distB* Math.cos(angB));
+
+   };
+
+
+   squareB.style.left = xB + "px";
+   squareB.style.top = yB + "px";
+
+   let distA2 = Math.random() * 300 + 60; 
+
+   let angA2 = Math.random() * max + min;
+   
+   let yA2 = yB + (distA2 * Math.sin(angA2));
+   let xA2 = xB + (distA2 * Math.cos(angA2));
+
+
+   
+   while((yA2 < 0) || (yA2 > 600) || (xA2 > 600)) {
+   
+    angA2 = Math.random() * max + min;
+distA2 = Math.random() * 300 + 60; 
+
+    xA2 = xB + (distA2 * Math.cos(angA2));
+
+    yA2 = yB + (distA2 * Math.sin(angA2));
+
+      };
+   
+      squareA2.style.left = xA2 + "px";
+   
+      squareA2.style.top = yA2 + "px";
+
+
+
+let angM =  newAng = (xM - xA2 < 0) * Math.PI + Math.atan((yM - yA2)/(xM - xA2));
+let distM = (yM - yA2) / Math.sin(angM);
+
+
+lineM.style.transform = " rotate(" + angA + "rad)";
+lineM.style.width = distA + "px";
+
+
+
+lineA.style.transform = " rotate(" + angL + "rad)";
+lineA.style.width = distL + "px";
+
+
+lineL.style.transform = " rotate(" + angB + "rad)";
+lineL.style.width = distB + "px";
+// lineL.style.left = "20px";
+
+lineB.style.transform = " rotate(" + angA2 + "rad)";
+lineB.style.width = distA2 + "px";
+
+
+lineA2.style.transform = " rotate(" + angM + "rad)";
+lineA2.style.width = distM + "px";
+
+    lineA.style.height = Math.random() * 7.7 + 0.3 + "px";
+    lineL.style.height = Math.random() * 7.7 + 0.3 + "px";
+    lineB.style.height = Math.random() * 7.7 + 0.3 + "px";
+    lineA2.style.height = Math.random() * 7.7 + 0.3 + "px";
+    lineM.style.height = Math.random() * 7.7 + 0.3 + "px";
+squareM.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareA.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareL.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareB.style.color = palette[Math.floor(Math.random() * palette.length)];
+squareA2.style.color = palette[Math.floor(Math.random() * palette.length)];
+lineM.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineA.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineL.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineB.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+lineA2.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];};
+
+
 
 
 
@@ -182,7 +652,6 @@ let initialX = 0;
 let initialY = 0;
 let moveElement = false;
 
-//Events Object
 let events = {
   mouse: {
     down: "mousedown",
@@ -199,21 +668,16 @@ let events = {
 
 
 
-//Start (mouse down / touch start)
 squareM.addEventListener("mousedown", (e) => {
-  e.preventDefault();
-  //initial x and y points
+//   e.preventDefault();
   initialX = e.clientX;
   initialY = e.clientY;
   squareM.style.zIndex = "2";
-  //Start movement
   moveElement = true;
 });
-//Move
 squareM.addEventListener("mousemove", (e) => {
-  //if movement == true then set top and left to new X andY while removing any offset
   if (moveElement) {
-    e.preventDefault();
+    // e.preventDefault();
   squareM.style.zIndex = "2";
 
     let newX = e.clientX;
@@ -221,6 +685,7 @@ squareM.addEventListener("mousemove", (e) => {
     yM = squareM.offsetTop - (initialY - newY);
     xM = squareM.offsetLeft - (initialX - newX);
     newAng = (xA - xM < 0) * Math.PI + Math.atan((yA - yM)/(xA - xM));
+    newAngm = (xM - xA2 < 0) * Math.PI + Math.atan((yA2 - yM)/(xA2 - xM));
     squareM.style.top = yM + "px";
     squareM.style.left = xM + "px";
     distA = (yA - yM) / Math.sin(newAng);
@@ -229,19 +694,227 @@ squareM.addEventListener("mousemove", (e) => {
     initialX = newX;
     initialY = newY;
 
+    distM = (yM - yA2) / Math.sin(newAngm);
+        lineA2.style.transform = "rotate(" + newAngm + "rad)"
+        lineA2.style.width = distM + "px";
+       
   }
 });
-//mouse up / touch end
 squareM.addEventListener(
   "mouseup",
-  (stopMovement = (e) => {
+  (stopMovement = () => {
     moveElement = false;
+  squareM.style.zIndex = "1";
+
   })
 );
 squareM.addEventListener("mouseleave", stopMovement);
-squareM.addEventListener("mouseup", (e) => {
+squareM.addEventListener("mouseup", () => {
   moveElement = false;
+  squareM.style.zIndex = "1";
+
 });
+
+squareA.addEventListener("mousedown", (e) => {
+    //   e.preventDefault();
+      initialX = e.clientX;
+      initialY = e.clientY;
+      squareA.style.zIndex = "2";
+      moveElement = true;
+    });
+    squareA.addEventListener("mousemove", (e) => {
+      if (moveElement) {
+        // e.preventDefault();
+      squareA.style.zIndex = "2";
+    
+        let newX = e.clientX;
+        let newY = e.clientY;
+        yA = squareA.offsetTop - (initialY - newY);
+        xA = squareA.offsetLeft - (initialX - newX);
+        newAng = (xL - xA < 0) * Math.PI + Math.atan((yL - yA)/(xL - xA));
+        newAngm = (xA - xM < 0) * Math.PI + Math.atan((yA - yM)/(xA - xM));
+        squareA.style.top = yA + "px";
+        squareA.style.left = xA + "px";
+        distL = (yL - yA) / Math.sin(newAng);
+        distA = (yA - yM) / Math.sin(newAngm);
+        lineA.style.transform = "rotate(" + newAng + "rad)"
+        lineA.style.width = distL + "px";
+        lineM.style.transform = "rotate(" + newAngm + "rad)"
+    lineM.style.width = distA + "px";
+        initialX = newX;
+        initialY = newY;
+    
+      }
+    });
+  
+    squareA.addEventListener(
+      "mouseup",
+      (stopMovement = () => {
+        moveElement = false;
+  squareA.style.zIndex = "1";
+
+      })
+    );
+    squareA.addEventListener("mouseleave", stopMovement);
+    squareA.addEventListener("mouseup", () => {
+      moveElement = false;
+  squareA.style.zIndex = "1";
+
+    });
+
+
+
+  
+squareL.addEventListener("mousedown", (e) => {
+    //   e.preventDefault();
+
+      initialX = e.clientX;
+      initialY = e.clientY;
+      squareL.style.zIndex = "2";
+    
+      moveElement = true;
+    });
+ 
+    squareL.addEventListener("mousemove", (e) => {
+     
+      if (moveElement) {
+       
+      squareL.style.zIndex = "2";
+    
+        let newX = e.clientX;
+        let newY = e.clientY;
+        yL = squareL.offsetTop - (initialY - newY);
+        xL = squareL.offsetLeft - (initialX - newX);
+        newAng = (xB - xL < 0) * Math.PI + Math.atan((yB - yL)/(xB - xL));
+        newAngm = (xL - xA < 0) * Math.PI + Math.atan((yL - yA)/(xL - xA));
+        squareL.style.top = yL + "px";
+        squareL.style.left = xL + "px";
+        distB = (yB - yL) / Math.sin(newAng);
+        distL = (yL - yA) / Math.sin(newAngm);
+        lineL.style.transform = "rotate(" + newAng + "rad)"
+        lineL.style.width = distB + "px";
+        lineA.style.transform = "rotate(" + newAngm + "rad)"
+    lineA.style.width = distL + "px";
+        initialX = newX;
+        initialY = newY;
+    
+      }
+    });
+  
+    squareB.addEventListener(
+      "mouseup",
+      (stopMovement = () => {
+        moveElement = false;
+  squareL.style.zIndex = "1";
+
+      })
+    );
+    squareL.addEventListener("mouseleave", stopMovement);
+    squareL.addEventListener("mouseup", () => {
+      moveElement = false;
+  squareL.style.zIndex = "1";
+
+    });
+
+   
+    squareB.addEventListener("mousedown", (e) => {
+    
+          initialX = e.clientX;
+          initialY = e.clientY;
+          squareB.style.zIndex = "2";
+    
+          moveElement = true;
+        });
+       
+        squareB.addEventListener("mousemove", (e) => {
+         
+          if (moveElement) {
+           
+          squareB.style.zIndex = "2";
+        
+            let newX = e.clientX;
+            let newY = e.clientY;
+            yB = squareB.offsetTop - (initialY - newY);
+            xB = squareB.offsetLeft - (initialX - newX);
+            newAng = (xA2 - xB < 0) * Math.PI + Math.atan((yA2 - yB)/(xA2 - xB));
+            newAngm = (xB - xL < 0) * Math.PI + Math.atan((yB - yL)/(xB - xL));
+            squareB.style.top = yB + "px";
+            squareB.style.left = xB + "px";
+            distA2 = (yA2 - yB) / Math.sin(newAng);
+            distB = (yB - yL) / Math.sin(newAngm);
+            lineB.style.transform = "rotate(" + newAng + "rad)"
+            lineB.style.width = distA2 + "px";
+            lineL.style.transform = "rotate(" + newAngm + "rad)"
+        lineL.style.width = distB + "px";
+            initialX = newX;
+            initialY = newY;
+        
+          }
+        });
+      
+        squareB.addEventListener(
+          "mouseup",
+          (stopMovement = () => {
+            moveElement = false;
+      squareB.style.zIndex = "1";
+    
+          })
+        );
+        squareB.addEventListener("mouseleave", stopMovement);
+        squareB.addEventListener("mouseup", () => {
+          moveElement = false;
+      squareB.style.zIndex = "1";
+    
+        });
+
+        squareA2.addEventListener("mousedown", (e) => {
+            //   e.preventDefault();
+   
+              initialX = e.clientX;
+              initialY = e.clientY;
+              squareB.style.zIndex = "2";
+            
+              moveElement = true;
+            });
+            squareA2.addEventListener("mousemove", (e) => {
+              if (moveElement) {
+                // e.preventDefault();
+              squareA2.style.zIndex = "2";
+            
+                let newX = e.clientX;
+                let newY = e.clientY;
+                yA2 = squareA2.offsetTop - (initialY - newY);
+                xA2 = squareA2.offsetLeft - (initialX - newX);
+                newAng = (xM - xA2 < 0) * Math.PI + Math.atan((yM - yA2)/(xM - xA2));
+                newAngm = (xA2 - xB < 0) * Math.PI + Math.atan((yA2 - yB)/(xA2 - xB));
+                squareA2.style.top = yA2 + "px";
+                squareA2.style.left = xA2 + "px";
+                distA2 = (yA2 - yB) / Math.sin(newAngm);
+                distM = (yM - yA2) / Math.sin(newAng);
+                lineB.style.transform = "rotate(" + newAngm + "rad)"
+                lineB.style.width = distA2 + "px";
+                lineA2.style.transform = "rotate(" + newAng + "rad)"
+            lineA2.style.width = distM + "px";
+                initialX = newX;
+                initialY = newY;
+            
+              }
+            });
+          
+            squareA2.addEventListener(
+              "mouseup",
+              (stopMovement = () => {
+                moveElement = false;
+          squareA2.style.zIndex = "1";
+        
+              })
+            );
+            squareA2.addEventListener("mouseleave", stopMovement);
+            squareA2.addEventListener("mouseup", () => {
+              moveElement = false;
+          squareA2.style.zIndex = "1";
+        
+            });
 
 
 
@@ -263,7 +936,7 @@ console.log(yM);
 // Math.sin(radians)
 // Math.cos(radians)
 
-// let distL = Math.random() * 150 + 50; 
+// let distL = Math.random() * 300 + 60; 
 
 
 // let angL = Math.random() * max + min;
