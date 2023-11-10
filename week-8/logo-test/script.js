@@ -22,6 +22,9 @@ let grid = document.getElementById("grid");
 
 let squares = document.querySelectorAll(".square");
 
+let letters = document.querySelectorAll(".letter");
+
+
 let lines = document.querySelectorAll(".line");
 
 
@@ -36,11 +39,19 @@ let squareL = squares[2];
 let squareB = squares[3];
 let squareA2 = squares[4];
 
-squareM.style.zIndex = "1";
-squareA.style.zIndex = "1";
-squareL.style.zIndex = "1";
-squareB.style.zIndex = "1";
-squareA2.style.zIndex = "1";
+let letterM = letters[0];
+let letterA = letters[1];
+let letterL = letters[2];
+let letterB = letters[3];
+let letterA2 = letters[4];
+
+
+
+// squareM.style.zIndex = "2";
+// squareA.style.zIndex = "2";
+// squareL.style.zIndex = "2";
+// squareB.style.zIndex = "2";
+// squareA2.style.zIndex = "2";
 
 
 
@@ -471,11 +482,11 @@ button4.onclick = function black(){
 
 
 button6.onclick = function width(){
-    lineA.style.height = Math.random() * 7.7 + 0.3 + "px";
-lineL.style.height = Math.random() * 7.7 + 0.3 + "px";
-lineB.style.height = Math.random() * 7.7 + 0.3 + "px";
-lineA2.style.height = Math.random() * 7.7 + 0.3 + "px";
-lineM.style.height = Math.random() * 7.7 + 0.3 + "px";}
+    lineA.style.height = Math.random() * 9 + 1 + "px";
+lineL.style.height = Math.random() * 9 + 1 + "px";
+lineB.style.height = Math.random() * 9 + 1 + "px";
+lineA2.style.height = Math.random() * 9 + 1 + "px";
+lineM.style.height = Math.random() * 9 + 1 + "px";}
 
 
 
@@ -628,11 +639,11 @@ lineB.style.width = distA2 + "px";
 lineA2.style.transform = " rotate(" + angM + "rad)";
 lineA2.style.width = distM + "px";
 
-    lineA.style.height = Math.random() * 7.7 + 0.3 + "px";
-    lineL.style.height = Math.random() * 7.7 + 0.3 + "px";
-    lineB.style.height = Math.random() * 7.7 + 0.3 + "px";
-    lineA2.style.height = Math.random() * 7.7 + 0.3 + "px";
-    lineM.style.height = Math.random() * 7.7 + 0.3 + "px";
+    lineA.style.height = Math.random() * 9 + 1 + "px";
+    lineL.style.height = Math.random() * 9 + 1 + "px";
+    lineB.style.height = Math.random() * 9 + 1 + "px";
+    lineA2.style.height = Math.random() * 9 + 1 + "px";
+    lineM.style.height = Math.random() * 9 + 1 + "px";
 squareM.style.color = palette[Math.floor(Math.random() * palette.length)];
 squareA.style.color = palette[Math.floor(Math.random() * palette.length)];
 squareL.style.color = palette[Math.floor(Math.random() * palette.length)];
@@ -672,13 +683,13 @@ squareM.addEventListener("mousedown", (e) => {
 //   e.preventDefault();
   initialX = e.clientX;
   initialY = e.clientY;
-  squareM.style.zIndex = "2";
+  squareM.style.zIndex = "3";
   moveElement = true;
 });
 squareM.addEventListener("mousemove", (e) => {
   if (moveElement) {
     // e.preventDefault();
-  squareM.style.zIndex = "2";
+  squareM.style.zIndex = "3";
 
     let newX = e.clientX;
     let newY = e.clientY;
@@ -704,14 +715,14 @@ squareM.addEventListener(
   "mouseup",
   (stopMovement = () => {
     moveElement = false;
-  squareM.style.zIndex = "1";
+  squareM.style.zIndex = "2";
 
   })
 );
 squareM.addEventListener("mouseleave", stopMovement);
 squareM.addEventListener("mouseup", () => {
   moveElement = false;
-  squareM.style.zIndex = "1";
+  squareM.style.zIndex = "2";
 
 });
 
@@ -719,13 +730,13 @@ squareA.addEventListener("mousedown", (e) => {
     //   e.preventDefault();
       initialX = e.clientX;
       initialY = e.clientY;
-      squareA.style.zIndex = "2";
+      squareA.style.zIndex = "3";
       moveElement = true;
     });
     squareA.addEventListener("mousemove", (e) => {
       if (moveElement) {
         // e.preventDefault();
-      squareA.style.zIndex = "2";
+      squareA.style.zIndex = "3";
     
         let newX = e.clientX;
         let newY = e.clientY;
@@ -751,14 +762,14 @@ squareA.addEventListener("mousedown", (e) => {
       "mouseup",
       (stopMovement = () => {
         moveElement = false;
-  squareA.style.zIndex = "1";
+  squareA.style.zIndex = "2";
 
       })
     );
     squareA.addEventListener("mouseleave", stopMovement);
     squareA.addEventListener("mouseup", () => {
       moveElement = false;
-  squareA.style.zIndex = "1";
+  squareA.style.zIndex = "2";
 
     });
 
@@ -770,7 +781,7 @@ squareL.addEventListener("mousedown", (e) => {
 
       initialX = e.clientX;
       initialY = e.clientY;
-      squareL.style.zIndex = "2";
+      squareL.style.zIndex = "3";
     
       moveElement = true;
     });
@@ -779,7 +790,7 @@ squareL.addEventListener("mousedown", (e) => {
      
       if (moveElement) {
        
-      squareL.style.zIndex = "2";
+      squareL.style.zIndex = "3";
     
         let newX = e.clientX;
         let newY = e.clientY;
@@ -805,14 +816,14 @@ squareL.addEventListener("mousedown", (e) => {
       "mouseup",
       (stopMovement = () => {
         moveElement = false;
-  squareL.style.zIndex = "1";
+  squareL.style.zIndex = "2";
 
       })
     );
     squareL.addEventListener("mouseleave", stopMovement);
     squareL.addEventListener("mouseup", () => {
       moveElement = false;
-  squareL.style.zIndex = "1";
+  squareL.style.zIndex = "2";
 
     });
 
@@ -821,7 +832,7 @@ squareL.addEventListener("mousedown", (e) => {
     
           initialX = e.clientX;
           initialY = e.clientY;
-          squareB.style.zIndex = "2";
+          squareB.style.zIndex = "3";
     
           moveElement = true;
         });
@@ -830,7 +841,7 @@ squareL.addEventListener("mousedown", (e) => {
          
           if (moveElement) {
            
-          squareB.style.zIndex = "2";
+          squareB.style.zIndex = "3";
         
             let newX = e.clientX;
             let newY = e.clientY;
@@ -856,14 +867,14 @@ squareL.addEventListener("mousedown", (e) => {
           "mouseup",
           (stopMovement = () => {
             moveElement = false;
-      squareB.style.zIndex = "1";
+      squareB.style.zIndex = "2";
     
           })
         );
         squareB.addEventListener("mouseleave", stopMovement);
         squareB.addEventListener("mouseup", () => {
           moveElement = false;
-      squareB.style.zIndex = "1";
+      squareB.style.zIndex = "2";
     
         });
 
@@ -872,14 +883,14 @@ squareL.addEventListener("mousedown", (e) => {
    
               initialX = e.clientX;
               initialY = e.clientY;
-              squareB.style.zIndex = "2";
+              squareB.style.zIndex = "3";
             
               moveElement = true;
             });
             squareA2.addEventListener("mousemove", (e) => {
               if (moveElement) {
                 // e.preventDefault();
-              squareA2.style.zIndex = "2";
+              squareA2.style.zIndex = "3";
             
                 let newX = e.clientX;
                 let newY = e.clientY;
@@ -905,14 +916,14 @@ squareL.addEventListener("mousedown", (e) => {
               "mouseup",
               (stopMovement = () => {
                 moveElement = false;
-          squareA2.style.zIndex = "1";
+          squareA2.style.zIndex = "2";
         
               })
             );
             squareA2.addEventListener("mouseleave", stopMovement);
             squareA2.addEventListener("mouseup", () => {
               moveElement = false;
-          squareA2.style.zIndex = "1";
+          squareA2.style.zIndex = "2";
         
             });
 
