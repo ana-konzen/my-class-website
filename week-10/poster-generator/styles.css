@@ -13,20 +13,14 @@
 
 }
 
+body {background: rgb(243, 220, 192);}
+
 button {
     cursor: pointer;
     z-index: 9999;
 }
 
-#button0 {
-    border: 1px solid grey;
-    cursor: pointer;
-    background: white;
-}
 
-#animate {
-    border: 1px solid grey;
-}
 
 
 .art {
@@ -155,7 +149,9 @@ fill: blue;
 }
 
 #logo {
-    height: 150px;
+    height: 200px;
+    position: fixed;
+    left: 50px;
 }
 
 .column {
@@ -170,30 +166,33 @@ fill: blue;
 
 }
 
+
+
 .logo {
 display: flex;
 justify-content: center;
+z-index: 999;
 }
 
 #menu {
-    width: 100vw;
+    width: 80vw;
     height: 200px;
     position: fixed;
     top: 10px;
-    left: 0px;
-    transition: 2s;
+    right: 0px;
+    transition: all 1s;
     z-index: 999;
-    background-color: white;
+    background: rgb(243, 220, 192);
     display: flex;
-    border: solid 1px rgb(179, 179, 179);
+    border: solid 2px black;
     
 
     justify-content: space-between;
     box-sizing: border-box;
     flex-flow: column;
     font-family: "latino-gothic-variable", sans-serif;
-    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 30;
-    font-size: 15px;
+    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 50;
+    font-size: 16px;
 
 }
 
@@ -245,7 +244,7 @@ position: absolute;
 
 
 .color {
-    border-right: solid 1px rgb(179, 179, 179);
+    border-right: solid 2px rgb(0, 0, 0);
 
 
 }
@@ -271,34 +270,36 @@ position: absolute;
     margin-bottom: 10px;
     position: relative;
 
-    border: 1px solid grey;
+    border: 2px solid rgb(0, 0, 0);
 
 
 }
+
+#beige {background: rgb(255, 243, 228);}
 
 #bmask {
     border-radius: 0;
     width: 100px;
     height: 40px;
     bottom: -10px;
-color: white;
-    background: grey;
+color: rgb(255, 243, 228);
+    background: black;
     border: none;
 
 }
 
 #bblack {background-color: black;}
 
-#lwhite {background-color: white;}
+#lwhite {background-color: rgb(255, 243, 228);}
 
 .shape button {
     width: 200px;
     margin-bottom: 20px;
-    background: white;
-    border: none;
+    background: inherit;
+    border: 2px solid black;
 
     font-family: "latino-gothic-variable", sans-serif;
-    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 30;
+    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 50;
 }
 
 
@@ -360,7 +361,7 @@ color: white;
 }
 
 #bwhite {
-    background-color: white;
+    background-color: rgb(255, 243, 228);
 }
 
 #tarsila {
@@ -429,6 +430,7 @@ color: white;
     width: 700px;
     left: 50vw;
     z-index: -2;
+    background: rgb(255, 243, 228);
     top: 250px;
     position: absolute;
     transform: translateX(-50%);
@@ -446,15 +448,22 @@ color: white;
     top: 210px;
     right: 50px;
     font-family: "latino-gothic-variable", sans-serif;
-    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 30;
+    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 50;
     font-size: 15px;
-    border: none;
-    background: lightgray;
+    border: 2px solid black;
+    color: black;
+    background: rgb(243, 220, 192);
     height: 50px;
     width: 100px;
-    transition: 2s;
+    box-sizing: border-box;
+    transition: 1s;
+    cursor: pointer;
 }
 
+#hide:hover {
+    background: black;
+    color: rgb(243, 220, 192);
+}
 
 
 .square {
@@ -546,3 +555,23 @@ align-content: center;
     display: none;
 }
 
+
+button:hover {
+    border: solid 4px black;
+}
+
+#black:hover {
+
+    border: solid 4px rgb(255, 243, 228);
+  
+}
+
+#bblack:hover {
+
+    border: solid 4px rgb(255, 243, 228);
+  
+}
+
+button {
+    cursor: pointer;
+}

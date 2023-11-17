@@ -32,7 +32,7 @@ let animate = document.getElementById("animate");
 
 let bblack = document.getElementById("bblack");
 
-let black = document.getElementById("black");
+let lblack = document.getElementById("black");
 let button6 = document.getElementById("button6");
 let button7 = document.getElementById("button7");
 let button8 = document.getElementById("button8");
@@ -100,6 +100,9 @@ let yellow = "#EEBE46";
 let red = "#AF3034";
 let green = "#036848";
 let lightblue = "#6CA8D9";
+let white = "rgb(255, 243, 228)";
+let black = "black";
+
 
 
 
@@ -197,7 +200,9 @@ animate.innerHTML = "<svg width='14' height='16' viewBox='0 0 14 16' fill='none'
 multi.addEventListener("click", multiFunction);
 bwhite.addEventListener("click", bwhiteFunction);
 
-black.addEventListener("click", blackFunction);
+lblack.addEventListener("click", blackFunction);
+beige.addEventListener("click", beigeFunction);
+
 
 
 bblack.addEventListener("click", bblackFunction);
@@ -572,7 +577,7 @@ function multiFunction(){
 
 function bwhiteFunction(){
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
     };
 
@@ -584,7 +589,7 @@ function bwhiteFunction(){
 
     function lwhiteFunction(){
       for(let line of lines){
-        line.style.backgroundColor = "white";
+        line.style.backgroundColor = white;
           }; 
 
 
@@ -596,9 +601,12 @@ function bwhiteFunction(){
 
 function hideFunction(){
   if(getComputedStyle(menu).top == "10px"){
-  menu.style.top = "-400px";
+  menu.style.top = "-200px";
 hide.innerHTML = "Show Menu";
 hide.style.top = "0px";
+hide.style.background = "black";
+hide.style.color = "rgb(243, 220, 192)";
+
 poster.style.top = "20px";
 grid.style.top = "20px";
 
@@ -607,6 +615,8 @@ grid.style.top = "20px";
     menu.style.top = "10px";
     hide.innerHTML = "Hide Menu";
     hide.style.top = "210px";
+    hide.style.background = "rgb(243, 220, 192)";
+hide.style.color = "black";
 poster.style.top = "250px";
 grid.style.top = "250px";
 
@@ -627,7 +637,7 @@ function unmaskFunction(){
   
     }
     for(let line of squares){
-      line.style.color = "white";
+      line.style.color = white;
   
     }
     info.classList.remove("whitetext");
@@ -639,7 +649,7 @@ else{
   }
 
   for(let line of squares){
-    line.style.color = "white";
+    line.style.color = white;
 
   }
 
@@ -653,7 +663,7 @@ function transparentFunction() {
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
 
 }
@@ -663,7 +673,7 @@ function tarsilaFunction () {
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
   berni.style.opacity = 0;
   lam.style.opacity = 0;
@@ -682,7 +692,7 @@ function berniFunction () {
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
   tarsila.style.opacity = 0;
   lam.style.opacity = 0;
@@ -700,7 +710,7 @@ function lamFunction () {
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
   tarsila.style.opacity = 0;
   diego.style.opacity = 0;
@@ -728,7 +738,7 @@ function fridaFunction () {
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
   tarsila.style.opacity = 0;
 
@@ -745,14 +755,24 @@ function fridaFunction () {
 
 }
 
+function beigeFunction () {
+  poster.style.background = white;
+  for(let arts of art){
+    arts.style.opacity = 0;
 
+  }
+
+  for(let square of squares){
+    square.style.color = black;
+      }; 
+}
 
 function diegoFunction () {
   for(let line of lines){
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
   for(let square of squares){
-    square.style.color = "white";
+    square.style.color = white;
       }; 
   tarsila.style.opacity = 0;
 
