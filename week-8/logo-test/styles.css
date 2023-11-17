@@ -62,7 +62,7 @@ position: absolute;
 
 .line {
     width: 100px;
-    height: 10px;
+    height: 7px;
     background-color: #AF3034;
     position: absolute;
     top: 22.5px;
@@ -125,7 +125,7 @@ transform-origin: left;}
 }
 
 .letter {z-index: 1;
-    font-size: 120px;
+    font-size: 70px;
     /* background: blue; */
 }
 

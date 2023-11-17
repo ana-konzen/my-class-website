@@ -92,10 +92,13 @@ let imageB = image[3];
 let imageA2 = image[4];
 
 // imageM.style.background = "none";
-// // imageA.style.background = "none";
+// imageA.style.background = "none";
 // imageL.style.background = "none";
 // imageB.style.background = "none";
 // imageA2.style.background = "none";
+
+
+
 
 
 
@@ -316,10 +319,13 @@ function randomPosition(){
   squareA.style.left = xA + "px";
   squareA.style.top = yA + "px";
 
-  imageM.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-xM) + "px) translateY(" + (-yM) + "px)";
+let locM = imageM.getBoundingClientRect();
+
+  console.log(locM.top);
+
+  imageM.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-locM.left) + "px) translateY(" + (-locM.top) + "px)";
   // imageM.style.left = (100) + "px";
   // imageM.style.top = (50) + "px";
-
 
 
 
@@ -337,7 +343,9 @@ function randomPosition(){
   squareL.style.left = xL + "px";
   squareL.style.top = yL + "px";
 
-  imageA.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA) + "px) translateY(" + (-posyA) + "px)";
+  let locA = imageA.getBoundingClientRect();
+
+  imageA.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-locA.left) + "px) translateY(" + (-locA.top) + "px)";
 
 
   let [angB, distB, posxB, posyB] = getValidPoint(posxL, posyL, angT, maxX - 1*minDist);
@@ -351,7 +359,9 @@ function randomPosition(){
   squareB.style.left = xB + "px";
   squareB.style.top = yB + "px";
 
-  imageL.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxL) + "px) translateY(" + (-posyL) + "px)";
+  let locL = imageL.getBoundingClientRect();
+
+  imageL.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-locL.left) + "px) translateY(" + (-locL.top) + "px)";
 
 
   let [angA2, distA2, posxA2, posyA2] = getValidPoint(posxB, posyB, angT, maxX - 0*minDist);
@@ -365,7 +375,10 @@ function randomPosition(){
   squareA2.style.left = xA2 + "px";
   squareA2.style.top = yA2 + "px";
 
-  imageB.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxB) + "px) translateY(" + (-posyB) + "px)";
+
+let locB = imageB.getBoundingClientRect();
+
+  imageB.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-locB.left) + "px) translateY(" + (-locB.top) + "px)";
 
 
   let [angM, distM, posxM, posyM] = getValidPoint(posxA2, posyA2, angT, maxX + 1*minDist);
@@ -373,7 +386,10 @@ function randomPosition(){
 
   angT += angM;
 
-  imageA2.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA2) + "px) translateY(" + (-posyA2) + "px)";
+let locA2 = imageA2.getBoundingClientRect();
+
+
+  imageA2.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-locA2.left) + "px) translateY(" + (-locA2.top) + "px)";
 
 
   

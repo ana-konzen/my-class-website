@@ -3,10 +3,7 @@
     --gridw: calc(10* 7vh);
     --gridh: calc(10* 7vh);
     --color: #AF3034;
-    --text-color: white;
-    --lineWeight: 80px;
-    --lineWeightHalf: calc(var(--lineWeight)/2);
-    --angle: 30deg
+    --text-color: black;
 
 }
 
@@ -114,24 +111,23 @@
       );
 }
 
-
-#lred {
+#red {
     background-color: #AF3034;
 }
 
-#lgreen {
+#green {
     background-color: #036848;
 }
 
-#lblue {
+#blue {
     background-color: #2B3C7E;
 }
 
-#llightblue {
+#lightblue {
     background-color: #6CA8D9;
 }
 
-#lyellow {
+#yellow {
    background-color: #EEBE46;
 }
 
@@ -195,9 +191,8 @@
     top: 50px;
     position: fixed;
     transform: translateX(-50%);
-    border: solid 5px #AF3034;
+    /* border: solid 5px #AF3034; */
  transition: 2s;
- transition-timing-function: linear;
     overflow: visible;
     pointer-events: none;
 
@@ -208,21 +203,21 @@
 
 
 .square {
-    height: var(--lineWeight);
+    height: 85px;
     /* background-color: #d79c49; */
     /* background-color: #a5763300; */
-    width:  var(--lineWeight);
+    width:  85px;
     /* border: black solid 1px; */
     /* background-color: aliceblue; */
     box-sizing: border-box;
     color: var(--text-color);
- /* transition-timing-function: linear; */
+ 
+
   
     transition: width 2s, transform 2s, left 2s, top 2s, color 0.5s;
-    /* transition-delay: 1s; */
- transition-timing-function: linear;
 
-    font-size: 70px;
+    /* border-radius: 50%; */
+    font-size: 80px;
     text-align: center;
     overflow: visible;
     -webkit-user-select: none;
@@ -251,55 +246,16 @@ font-family: "latino-gothic-variable", sans-serif;
 
 .line {
     width: 100px;
-    height: var(--lineWeight);
+    height: 85px;
     background-color: var(--color);
     position: absolute;
     top: 0px;
-    /* transition-delay: 2s; */
-
     z-index: -2;
     transition: width 2s, transform 2s, left 2s, top 2s, background-color 0.5s;
     box-sizing: border-box;
- transition-timing-function: linear;
-
     left: 0px;
-    border-radius: var(--lineWeightHalf);
-    transform-origin: var(--lineWeightHalf) var(--lineWeightHalf);
-}
-
-.background {
-    /* background-color: black; */
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    position: relative;
-    transition: 2s;
-
- transition-timing-function: linear;
-
-    overflow: hidden;
-    /* transition-delay: -1s; */
-
-}
-
-.image {
-    content: "";
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    z-index: -1;
-    background-color: #036848;
     transform-origin: 42.5px 42.5px;
-    transition: 2s;
- transition-timing-function: linear;
-
-    /* transition-delay: -1s; */
-    background: url("tarsila.jpg");
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: cover;
-
-
+    border-radius: 42.5px;
 }
 
 .border {
@@ -328,23 +284,27 @@ border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%
 }
 
 .letter {position: absolute;
-width: var(--lineWeight);
-height: var(--lineWeight);
-border-radius: 50%;
+width: 90px;
+height: 90px;
 text-align: center;
-
 display: flex;
 align-items: center;
 justify-items: center;
+/* border: solid 2px black; */
 justify-content: center;
 align-content: center;
+left: calc(50% - 45px);
+top: calc(50% - 45px);
+
 /* left: -5px; */
 
+/* color: black; */
+
 transition: transform 2s;
-transition-timing-function: linear;
 
+border-radius: 50%;
 
-/* background-color: #6CA8D9; */
+background-color: white;
 
 }
 

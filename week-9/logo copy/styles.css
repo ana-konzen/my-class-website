@@ -197,7 +197,6 @@
     transform: translateX(-50%);
     border: solid 5px #AF3034;
  transition: 2s;
- transition-timing-function: linear;
     overflow: visible;
     pointer-events: none;
 
@@ -216,11 +215,9 @@
     /* background-color: aliceblue; */
     box-sizing: border-box;
     color: var(--text-color);
- /* transition-timing-function: linear; */
   
     transition: width 2s, transform 2s, left 2s, top 2s, color 0.5s;
     /* transition-delay: 1s; */
- transition-timing-function: linear;
 
     font-size: 70px;
     text-align: center;
@@ -260,8 +257,6 @@ font-family: "latino-gothic-variable", sans-serif;
     z-index: -2;
     transition: width 2s, transform 2s, left 2s, top 2s, background-color 0.5s;
     box-sizing: border-box;
- transition-timing-function: linear;
-
     left: 0px;
     border-radius: var(--lineWeightHalf);
     transform-origin: var(--lineWeightHalf) var(--lineWeightHalf);
@@ -273,11 +268,8 @@ font-family: "latino-gothic-variable", sans-serif;
     height: inherit;
     border-radius: inherit;
     position: relative;
-    transition: 2s;
-
- transition-timing-function: linear;
-
-    overflow: hidden;
+    transition: 0s;
+    /* overflow: hidden; */
     /* transition-delay: -1s; */
 
 }
@@ -291,8 +283,6 @@ font-family: "latino-gothic-variable", sans-serif;
     background-color: #036848;
     transform-origin: 42.5px 42.5px;
     transition: 2s;
- transition-timing-function: linear;
-
     /* transition-delay: -1s; */
     background: url("tarsila.jpg");
     background-repeat: no-repeat;
@@ -332,7 +322,6 @@ width: var(--lineWeight);
 height: var(--lineWeight);
 border-radius: 50%;
 text-align: center;
-
 display: flex;
 align-items: center;
 justify-items: center;
@@ -341,8 +330,6 @@ align-content: center;
 /* left: -5px; */
 
 transition: transform 2s;
-transition-timing-function: linear;
-
 
 /* background-color: #6CA8D9; */
 

@@ -2,7 +2,8 @@
     
     --gridw: calc(10* 7vh);
     --gridh: calc(10* 7vh);
-    --color: #AF3034;
+    /* --color: #AF3034; */
+    --color: black;
     --text-color: white;
     --lineWeight: 80px;
     --lineWeightHalf: calc(var(--lineWeight)/2);
@@ -10,7 +11,84 @@
 
 }
 
+/* .art {transition: all 2s;} */
 
+#pathM {
+   
+/* width: 100px; */
+fill: blue;
+    
+    /* transition-delay: 0s, 0s, 0s, 0s, 0s; */
+    /* transition-property: x, y, transform, width, transform-origin; */
+    position: absolute;
+  
+    /* transform: rotate(30deg); */
+}
+
+#mySVG rect {
+    /* transition: all 2s; */
+    height: var(--lineWeight);
+    rx: var(--lineWeightHalf);
+    
+
+}
+#test {
+    width: inherit;
+    height: inherit;
+
+    border-radius: inherit;}
+
+#pathA {
+    fill: green;
+  
+
+
+    /* animation-timing-function: linear; */
+
+    /* transition-delay: 0s, 0s, 0s, 0s, 0s; */
+
+    /* transition-property: x, y, transform, width, transform-origin; */
+
+
+}
+
+#bberni {
+    background-image: url(berni.jpeg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#btarsila {
+    background-image: url(tarsila.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#blam {
+    background-image: url(lam.jpeg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#pathL {
+    fill: blue;
+}
+
+#pathB {
+    fill: green;
+}
+
+#pathA2 {
+    fill: blue;
+}
+
+#mySVG {
+    /* background-color: yellow; */
+    top: 0px;
+    position: absolute;
+    /* transition: 2s; */
+    
+}
 
 #menu {
     width: 450px;
@@ -62,10 +140,10 @@
 }
 
 
-.color {
+/* .color {
     justify-content: space-between;
 
-}
+} */
 .shape {   
     align-content: center;
     justify-content: center;
@@ -83,8 +161,10 @@
 .color button {
     border-radius: 50%;
     width: 50px;
-    border: 1px solid grey;
+    margin-left: 10px;
+    margin-bottom: 10px;
 
+    border: 1px solid grey;
 
 
 }
@@ -103,27 +183,18 @@
     font-variation-settings: "slnt" 1, "wdth" 70, "wght" 30;
 }
 
-#linemulti {
-    background: linear-gradient(
-        to right,
-        #AF3034 20%,
-        #EEBE46 20% 40%,
-        #036848 40% 60%,
-        #2B3C7E 60% 80%,
-        #6CA8D9 80%
-      );
-}
+
 
 
 #lred {
     background-color: #AF3034;
 }
 
-#lgreen {
+#brazil {
     background-color: #036848;
 }
 
-#lblue {
+#arg {
     background-color: #2B3C7E;
 }
 
@@ -131,7 +202,7 @@
     background-color: #6CA8D9;
 }
 
-#lyellow {
+#boli {
    background-color: #EEBE46;
 }
 
@@ -139,7 +210,7 @@
     background-color: black;
 }
 
-#bmulti {
+#multi {
     background: linear-gradient(
         to right,
         #AF3034 20%,
@@ -174,6 +245,33 @@
     background-color: white;
 }
 
+#tarsila {
+    clip-path: url(#mask);
+    top: 0px;
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    width: 750px;
+}
+
+#berni {
+    clip-path: url(#mask);
+    top: 0px;
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    height: 600px;
+}
+
+#lam {
+    clip-path: url(#mask);
+    top: 0px;
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    width: 750px;
+}
+
 #container {
     /* background-color: red; */
     height: var(--gridh);
@@ -195,9 +293,8 @@
     top: 50px;
     position: fixed;
     transform: translateX(-50%);
-    border: solid 5px #AF3034;
- transition: 2s;
- transition-timing-function: linear;
+    /* border: solid 5px #AF3034; */
+ /* transition: 2s; */
     overflow: visible;
     pointer-events: none;
 
@@ -216,11 +313,10 @@
     /* background-color: aliceblue; */
     box-sizing: border-box;
     color: var(--text-color);
- /* transition-timing-function: linear; */
+    /* transition: all 2s; */
   
-    transition: width 2s, transform 2s, left 2s, top 2s, color 0.5s;
-    /* transition-delay: 1s; */
- transition-timing-function: linear;
+    /* transition: width 0s, transform 0s, left 0s, top 0s, color 0s; */
+    /* transition-delay: 0s; */
 
     font-size: 70px;
     text-align: center;
@@ -255,13 +351,13 @@ font-family: "latino-gothic-variable", sans-serif;
     background-color: var(--color);
     position: absolute;
     top: 0px;
+
     /* transition-delay: 2s; */
 
-    z-index: -2;
-    transition: width 2s, transform 2s, left 2s, top 2s, background-color 0.5s;
+    /* z-index: -2; */
+    /* transition: width 2s, height 2s, transform 2s, left 2s, top 2s, background-color 0.5s; */
     box-sizing: border-box;
- transition-timing-function: linear;
-
+/* transition: all 0s linear; */
     left: 0px;
     border-radius: var(--lineWeightHalf);
     transform-origin: var(--lineWeightHalf) var(--lineWeightHalf);
@@ -273,31 +369,21 @@ font-family: "latino-gothic-variable", sans-serif;
     height: inherit;
     border-radius: inherit;
     position: relative;
-    transition: 2s;
+    /* transition: 2s; */
 
- transition-timing-function: linear;
 
     overflow: hidden;
-    /* transition-delay: -1s; */
+    /* transition-delay: -0s; */
 
 }
 
 .image {
-    content: "";
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    z-index: -1;
-    background-color: #036848;
-    transform-origin: 42.5px 42.5px;
-    transition: 2s;
- transition-timing-function: linear;
+ 
+position: fixed;
+top: 0px;
+mask-image: url(http://www.w3.org/2000/svg);
 
-    /* transition-delay: -1s; */
-    background: url("tarsila.jpg");
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: cover;
+
 
 
 }
@@ -331,6 +417,7 @@ border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%
 width: var(--lineWeight);
 height: var(--lineWeight);
 border-radius: 50%;
+z-index: 2;
 text-align: center;
 
 display: flex;
@@ -340,8 +427,7 @@ justify-content: center;
 align-content: center;
 /* left: -5px; */
 
-transition: transform 2s;
-transition-timing-function: linear;
+/* transition: all 2s; */
 
 
 /* background-color: #6CA8D9; */
@@ -352,4 +438,82 @@ transition-timing-function: linear;
 
 .no {
     display: none;
+}
+
+.myLogo text {
+    font-size: 70px;
+font-family: "latino-gothic-variable", sans-serif;
+    font-variation-settings: "slnt" 1, "wdth" 70, "wght" 70; 
+    
+    
+}
+
+.myLogo rect {
+    height: 90px;
+    rx: 45px;
+    fill: black;
+}
+
+.myLogo.one rect:nth-of-type(n + 2) {
+    width: 180px;
+}
+
+.myLogo.one rect:nth-of-type(1) {
+    width: 280px;
+    
+}
+
+
+
+.myLogo.two rect:nth-of-type(odd) {
+    width: 220px;
+    height: 90px;
+}
+
+.myLogo.two rect:nth-of-type(1) {
+    width: 235px;
+    height: 90px;
+}
+
+.myLogo.two rect:nth-of-type(even) {
+    width: 90px;
+    height: 220px;
+
+    
+}
+
+
+
+
+.myLogo {
+    position: fixed;
+    transform: scale(0.5);
+
+}
+
+.myLogo.one {
+    top: 300px;
+    left: 50vw;
+    /* background-color: #036848; */
+}
+
+.myLogo.two {
+    top: 200px;
+    left: 40vw;
+    /* background-color: #036848; */
+
+
+}
+
+
+.one {
+    /* display: none; */
+    display: block;
+
+}
+
+.two {
+    /* display: none; */
+    display: block;
+    
 }

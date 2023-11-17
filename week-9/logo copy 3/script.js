@@ -8,19 +8,14 @@ let button0 = document.getElementById("button0");
 let linemulti = document.getElementById("linemulti");
 let multi = document.getElementById("multi");
 
-let lgreen = document.getElementById("lgreen");
+let brazil = document.getElementById("brazil");
 let lred = document.getElementById("lred");
-let lyellow = document.getElementById("lyellow");
-let lblue = document.getElementById("lblue");
+let boli = document.getElementById("boli");
+let arg = document.getElementById("arg");
 let llightblue = document.getElementById("llightblue");
 
-let bmulti = document.getElementById("bmulti");
 
-let bgreen = document.getElementById("bgreen");
-let bred = document.getElementById("bred");
-let byellow = document.getElementById("byellow");
-let bblue = document.getElementById("bblue");
-let blightblue = document.getElementById("blightblue");
+
 let bwhite = document.getElementById("bwhite");
 let lwhite = document.getElementById("lwhite");
 
@@ -38,8 +33,22 @@ let button8 = document.getElementById("button8");
 
 let image = document.querySelectorAll(".image");
 
+let mySVG = document.getElementById("mySVG");
+
+let pathM = document.getElementById("pathM");
+let pathA = document.getElementById("pathA");
+let pathL = document.getElementById("pathL");
+let pathB = document.getElementById("pathB");
+let pathA2 = document.getElementById("pathA2");
+
+let paths = document.querySelectorAll("rect");
+
 
 let r = document.querySelector(":root");
+
+let tarsila = document.getElementById("tarsila");
+let berni = document.getElementById("berni");
+let lam = document.getElementById("lam");
 
 
 
@@ -48,6 +57,16 @@ let grid = document.getElementById("grid");
 let squares = document.querySelectorAll(".square");
 
 let letters = document.querySelectorAll(".letter");
+
+let btarsila = document.getElementById("btarsila");
+
+let bberni = document.getElementById("bberni");
+
+let blam = document.getElementById("blam");
+
+
+let art = document.querySelectorAll(".art");
+
 
 
 let lines = document.querySelectorAll(".line");
@@ -68,14 +87,6 @@ let letterB = letters[3];
 let letterA2 = letters[4];
 
 
-// letterM.style.left = "5px";
-// letterM.style.top = "5px";
-
-// letterB.style.top = "6px";
-// letterB.style.left = "6px";
-
-// letterL.style.top = "12.5px";
-
 
 
 let blue = "#2B3C7E";
@@ -84,25 +95,6 @@ let red = "#AF3034";
 let green = "#036848";
 let lightblue = "#6CA8D9";
 
-
-let imageM = image[0];
-let imageA = image[1];
-let imageL = image[2];
-let imageB = image[3];
-let imageA2 = image[4];
-
-// imageM.style.background = "none";
-// // imageA.style.background = "none";
-// imageL.style.background = "none";
-// imageB.style.background = "none";
-// imageA2.style.background = "none";
-
-
-
-
-
-// letterM.style.background = "lblue";
-// letterM.style.left = "-50px";
 
 
 let lineM = lines[0];
@@ -117,61 +109,54 @@ let lineA2 = lines[4];
 
 
 
-// lineM.style.zIndex = -1;
 
 
-// lineM.style.top = "-12.5px";
-// lineM.style.left = "-12.5px";
-
-
-// letterA.style.top = "12.5px";
-// letterA.style.left = "12.5px";
-
-// letterL.style.top = "12.5px";
-// letterL.style.left = "12.5px";
-
-// letterB.style.top = "12.5px";
-// letterB.style.left = "12.5px";
-
-// letterA2.style.top = "12.5px";
-// letterA2.style.left = "12.5px";
-
-
-// let lineA = document.getElementById("line");
-
-// for (let line of lines){
-//   line.classList.add("arch");
-//   line.classList.remove("line");};
-
-//   for(let square of squares){
-//     square.style.color = "var(--color)";
-//   }
-
-let minDist = 80;
 let maxDist = 200;
 let minAng = Math.PI/3;
 let maxY = grid.offsetHeight - squareM.offsetWidth;
 let maxX = grid.offsetWidth - squareM.offsetWidth;
 
-let lineWeight = 80;
+
+
+let minWeight = 80;
+let maxWeight = 120;
+
+let lineWeight;
+let minDist = lineWeight;
 let wOffset = lineWeight;
 let letterOffset = 0;
 
 
-r.style.setProperty("--lineWeight", lineWeight + "px");
+let palette = [blue, lightblue, red, yellow, green];
 
 
+// for(let square of squares){
+//   square.classList.add("no");
+// }
 
 
 
 randomPosition();
+multiFunction();
+
 
 let myInterval;
 
+let linesBack = getComputedStyle(lineM);
+
+console.log(linesBack.backgroundColor);
+
 animate.onclick = function(){if(!myInterval){
-myInterval = setInterval(function(){
-  randomPosition();
-multiFunction();}, 2500);
+  if(getComputedStyle(lineM).backgroundColor == "rgba(0, 0, 0, 0)"){
+    myInterval = setInterval(function(){
+      randomPosition();
+    }, 1000);
+    animate.innerHTML = "Pause";}
+    else {myInterval = setInterval(function(){
+      randomPosition();
+      multiFunction();
+    }, 1000);}
+
 animate.innerHTML = "Pause";}
 else{
   clearInterval(myInterval);
@@ -181,12 +166,13 @@ animate.innerHTML = "Animate";
 }
 
 
+html2canvas(document.querySelector("#grid")).then(canvas => {
+  document.body.appendChild(canvas)
+});
 
 
 
 
-
-let palette = [blue, lightblue, red, yellow, green];
 
 
 
@@ -206,22 +192,14 @@ let palette = [blue, lightblue, red, yellow, green];
 
 
 multi.addEventListener("click", multiFunction);
-bmulti.addEventListener("click", bmultiFunction);
 bwhite.addEventListener("click", bwhiteFunction);
-blightblue.addEventListener("click", blightblueFunction);
-bblue.addEventListener("click", bblueFunction);
-bgreen.addEventListener("click", bgreenFunction);
-bred.addEventListener("click", bredFunction);
-byellow.addEventListener("click", byellowFunction);
-
 
 black.addEventListener("click", blackFunction);
-linemulti.addEventListener("click", linemultiFunction);
 llightblue.addEventListener("click", llightblueFunction);
-lblue.addEventListener("click", lblueFunction);
-lgreen.addEventListener("click", lgreenFunction);
+arg.addEventListener("click", argFunction);
+brazil.addEventListener("click", brazilFunction);
 lred.addEventListener("click", lredFunction);
-lyellow.addEventListener("click", lyellowFunction);
+boli.addEventListener("click", boliFunction);
 
 
 button0.addEventListener("click", randomPosition);
@@ -235,6 +213,11 @@ bblack.addEventListener("click", bblackFunction);
 lwhite.addEventListener("click", lwhiteFunction);
 
 transparent.addEventListener("click", transparentFunction);
+
+
+btarsila.addEventListener("click", tarsilaFunction);
+bberni.addEventListener("click", berniFunction);
+blam.addEventListener("click", lamFunction);
 
 
 
@@ -295,6 +278,16 @@ function getValidPoint(posX, posY, ang0, limX){
 }
 
 function randomPosition(){
+lineWeight = Math.random() * (maxWeight - minWeight) + minWeight;
+minDist = lineWeight;
+wOffset = lineWeight;
+
+r.style.setProperty("--lineWeight", lineWeight + "px");
+
+for(let square of squares) {
+  square.style.fontSize = lineWeight - (lineWeight / 6) + "px";
+  }
+
   let xM = Math.random() * (maxX - 3*minDist);
   let yM = Math.random() * maxY;
   let angT = 0;
@@ -302,7 +295,9 @@ function randomPosition(){
   console.log("posxM: " + xM + " posyM:" + yM)
 
   squareM.style.left = xM + "px";
+
   squareM.style.top = yM + "px";
+
     
   let [angA, distA, posxA, posyA] = getValidPoint(xM, yM, angT, maxX - 3*minDist);
 
@@ -316,7 +311,7 @@ function randomPosition(){
   squareA.style.left = xA + "px";
   squareA.style.top = yA + "px";
 
-  imageM.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-xM) + "px) translateY(" + (-yM) + "px)";
+  // imageM.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-xM) + "px) translateY(" + (-yM) + "px)";
   // imageM.style.left = (100) + "px";
   // imageM.style.top = (50) + "px";
 
@@ -337,7 +332,7 @@ function randomPosition(){
   squareL.style.left = xL + "px";
   squareL.style.top = yL + "px";
 
-  imageA.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA) + "px) translateY(" + (-posyA) + "px)";
+  // imageA.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA) + "px) translateY(" + (-posyA) + "px)";
 
 
   let [angB, distB, posxB, posyB] = getValidPoint(posxL, posyL, angT, maxX - 1*minDist);
@@ -351,7 +346,7 @@ function randomPosition(){
   squareB.style.left = xB + "px";
   squareB.style.top = yB + "px";
 
-  imageL.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxL) + "px) translateY(" + (-posyL) + "px)";
+  // imageL.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxL) + "px) translateY(" + (-posyL) + "px)";
 
 
   let [angA2, distA2, posxA2, posyA2] = getValidPoint(posxB, posyB, angT, maxX - 0*minDist);
@@ -365,7 +360,7 @@ function randomPosition(){
   squareA2.style.left = xA2 + "px";
   squareA2.style.top = yA2 + "px";
 
-  imageB.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxB) + "px) translateY(" + (-posyB) + "px)";
+  // imageB.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxB) + "px) translateY(" + (-posyB) + "px)";
 
 
   let [angM, distM, posxM, posyM] = getValidPoint(posxA2, posyA2, angT, maxX + 1*minDist);
@@ -373,16 +368,18 @@ function randomPosition(){
 
   angT += angM;
 
-  imageA2.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA2) + "px) translateY(" + (-posyA2) + "px)";
+  // imageA2.style.transform = "rotate(" + (-angT) + "rad) translateX(" + (-posxA2) + "px) translateY(" + (-posyA2) + "px)";
 
 
   
-  lineM.style.transform = " rotate(" + angA + "rad)";
+  lineM.style.transform = "rotate(" + angA + "rad)";
   lineM.style.width = distA + wOffset + "px";
+
+
   
   lineA.style.transform = " rotate(" + angL + "rad)";
   lineA.style.width = distL + wOffset + "px";
-  
+
   lineL.style.transform = " rotate(" + angB + "rad)";
   lineL.style.width = distB + wOffset + "px";
   
@@ -391,11 +388,144 @@ function randomPosition(){
   
   lineA2.style.transform = " rotate(" + angM + "rad)";
   lineA2.style.width = distM + wOffset + "px";
+
+
+
+  let randomScale = Math.random() * 0.3 + 1;
+
+
+// grid.style.transform = "scale(" + randomScale + ")";
+
+  let widthM = distA + wOffset;
+  let angleM = (lineWeight/2 + xM) + "px " + (lineWeight/2 + yM) + "px";
+pathM.style.x = xM;
+  pathM.style.y = yM;
+  pathM.style.width =  widthM;
+  pathM.style.transformOrigin = angleM;
+  pathM.style.transform = " rotate(" + (angA) + "rad)";
+
+
+  let widthA = distL + wOffset;
+  let xpA = posxA;
+  let ypA = posyA;
+  let angleA = (lineWeight/2 + posxA) + "px " + (lineWeight/2 + posyA) + "px";
+
+  pathA.style.x =  xpA;
+  pathA.style.y =  ypA;
+  pathA.style.width = widthA;
+  pathA.style.transformOrigin = angleA;
+  pathA.style.transform = " rotate(" + (angL + angA) + "rad)";
+
+
+  let widthL = distB + wOffset;
+  let xpL = posxL;
+  let ypL = posyL;
+  let angleL = (lineWeight/2 + xpL) + "px " + (lineWeight/2 + ypL) + "px";
+
+  pathL.style.x =  xpL;
+  pathL.style.y =  ypL;
+  pathL.style.width =  widthL;
+  pathL.style.transformOrigin =  angleL;
+  pathL.style.transform = " rotate(" + (angL + angA + angB) + "rad)";
+
+
+  let widthB = distA2 + wOffset;
+  let xpB = posxB;
+  let ypB = posyB;
+  let angleB = (lineWeight/2 + xpB) + "px " + (lineWeight/2 + ypB) + "px";
+
+  pathB.style.x =  xpB;
+  pathB.style.y =  ypB;
+  pathB.style.width =  widthB;
+  pathB.style.transformOrigin =  angleB;
+  pathB.style.transform = " rotate(" + (angL + angA + angB + angA2) + "rad)";
+
+
+  let widthA2 = distM + wOffset;
+  let xpA2 = posxA2;
+  let ypA2 = posyA2;
+  let angleA2 = (lineWeight/2 + xpA2) + "px " + (lineWeight/2 + ypA2) + "px";
+
+  pathA2.style.x =  xpA2;
+  pathA2.style.y =  ypA2;
+  pathA2.style.width =  widthA2;
+  pathA2.style.transformOrigin =  angleA2;
+  pathA2.style.transform = " rotate(" + (angM + angL + angA + angB + angA2) + "rad)";
+
+  // let initialX = 0;
+  // let initialY = 0;
+  // let moveElement = false;
+  
+  // let events = {
+  //   mouse: {
+  //     down: "mousedown",
+  //     move: "mousemove",
+  //     up: "mouseup",
+  //   },
+  //   touch: {
+  //     down: "touchstart",
+  //     move: "touchmove",
+  //     up: "touchend",
+  //   },
+  // };
+  
+  
+  
+  
+  // squareM.addEventListener("mousedown", (e) => {
+  // //   e.preventDefault();
+  //   initialX = e.clientX;
+  //   initialY = e.clientY;
+  //   squareM.style.zIndex = "3";
+  //   moveElement = true;
+  // });
+  // squareM.addEventListener("mousemove", (e) => {
+  //   if (moveElement) {
+  //     // e.preventDefault();
+  //   squareM.style.zIndex = "3";
+  
+  //     let newX = e.clientX;
+  //     let newY = e.clientY;
+  //     yM = squareM.offsetTop - (initialY - newY);
+  //     xM = squareM.offsetLeft - (initialX - newX);
+  //     newAng = (xA - xM < 0) * Math.PI + Math.atan((yA - yM)/(xA - xM));
+  //     newAngm = (xM - xA2 < 0) * Math.PI + Math.atan((yA2 - yM)/(xA2 - xM));
+  //     squareM.style.top = yM + "px";
+  //     squareM.style.left = xM + "px";
+  //     distA = (yA - yM) / Math.sin(newAng);
+  //     lineM.style.transform = "rotate(" + newAng + "rad)"
+  //     lineM.style.width = distA + "px";
+  //     initialX = newX;
+  //     initialY = newY;
+  
+  //     distM = (yM - yA2) / Math.sin(newAngm);
+  //         lineA2.style.transform = "rotate(" + newAngm + "rad)"
+  //         lineA2.style.width = distM + "px";
+         
+  //   }
+  // });
+  // squareM.addEventListener(
+  //   "mouseup",
+  //   (stopMovement = () => {
+  //     moveElement = false;
+  //   squareM.style.zIndex = "2";
+  
+  //   })
+  // );
+  // squareM.addEventListener("mouseleave", stopMovement);
+  // squareM.addEventListener("mouseup", () => {
+  //   moveElement = false;
+  //   squareM.style.zIndex = "2";
+  
+  // });
   };
 
 
 
 function linemultiFunction(){
+for(let art of art){
+art.style.opacity = 0;
+};
   lineM.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
   lineA.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
   lineL.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
@@ -404,7 +534,7 @@ function linemultiFunction(){
 
     };
   
-function lgreenFunction(){
+function brazilFunction(){
 
 for(let line of lines){
   line.style.backgroundColor = green;
@@ -422,7 +552,7 @@ function lredFunction(){
 
 };
 
-function lyellowFunction(){
+function boliFunction(){
   for(let line of lines){
     line.style.backgroundColor = yellow;
       };
@@ -430,7 +560,7 @@ function lyellowFunction(){
 
 };
 
-function lblueFunction(){
+function argFunction(){
   for(let line of lines){
     line.style.backgroundColor = blue;
       };
@@ -464,6 +594,7 @@ function blackFunction(){
 function multiFunction(){
 
 
+  mySVG.style.opacity = 0;
 
   [squareM.style.color, lineM.style.backgroundColor] = randomColor();
   [squareA.style.color, lineA.style.backgroundColor] = randomColor();
@@ -546,8 +677,54 @@ square.style.color = red;
 
 function transparentFunction() {
   for(let line of lines){
-    line.style.backgroundColor = "transparent";
+    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
+  for(let square of squares){
+    square.style.color = "white";
+      }; 
+
+}
+
+function tarsilaFunction () {
+  for(let line of lines){
+    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  }
+  for(let square of squares){
+    square.style.color = "white";
+      }; 
+  berni.style.opacity = 0;
+  lam.style.opacity = 0;
+
+
+  tarsila.style.opacity = 100;
+}
+
+function berniFunction () {
+  for(let line of lines){
+    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  }
+  for(let square of squares){
+    square.style.color = "white";
+      }; 
+  tarsila.style.opacity = 0;
+  lam.style.opacity = 0;
+
+
+  berni.style.opacity = 100;
+}
+
+function lamFunction () {
+  for(let line of lines){
+    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  }
+  for(let square of squares){
+    square.style.color = "white";
+      }; 
+  tarsila.style.opacity = 0;
+
+  berni.style.opacity = 0;
+  lam.style.opacity = 100;
+
 }
 
 
