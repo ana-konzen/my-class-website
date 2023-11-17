@@ -13,6 +13,14 @@
 
 /* .art {transition: all 2s;} */
 
+#button0 {
+    border: 1px solid grey;
+}
+
+#animate {
+    border: 1px solid grey;
+}
+
 #pathM {
    
 /* width: 100px; */

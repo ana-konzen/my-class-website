@@ -205,7 +205,7 @@ black.addEventListener("click", blackFunction);
 // boli.addEventListener("click", boliFunction);
 
 
-// button0.addEventListener("click", randomPosition);
+button0.addEventListener("click", randomPosition);
 
 // button7.addEventListener("click", multiFunction);
 // button7.addEventListener("click", randomPosition);
