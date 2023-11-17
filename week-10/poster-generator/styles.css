@@ -184,6 +184,7 @@ justify-content: center;
     position: fixed;
     top: 10px;
     left: 0px;
+    transition: 2s;
     z-index: 999;
     background-color: white;
     display: flex;
@@ -443,13 +444,16 @@ color: white;
 
 #hide {
     position: fixed;
-    top: 220px;
+    top: 210px;
     right: 50px;
     font-family: "latino-gothic-variable", sans-serif;
     font-variation-settings: "slnt" 1, "wdth" 70, "wght" 30;
     font-size: 15px;
     border: none;
-    background: none;
+    background: lightgray;
+    height: 50px;
+    width: 100px;
+    transition: 2s;
 }
 
 

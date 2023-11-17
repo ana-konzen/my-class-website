@@ -591,18 +591,18 @@ function bwhiteFunction(){
 
 
 function hideFunction(){
-  if(getComputedStyle(menu).display == "flex"){
-  menu.style.display = "none";
+  if(getComputedStyle(menu).top == "10px"){
+  menu.style.top = "-400px";
 hide.innerHTML = "Show Menu";
-hide.style.top = "100px";
+hide.style.top = "0px";
 poster.style.top = "20px";
 grid.style.top = "20px";
 
 }
   else{
-    menu.style.display = "flex";
+    menu.style.top = "10px";
     hide.innerHTML = "Hide Menu";
-    hide.style.top = "220px";
+    hide.style.top = "210px";
 poster.style.top = "250px";
 grid.style.top = "250px";
 
