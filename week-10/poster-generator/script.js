@@ -73,7 +73,7 @@ let blam = document.getElementById("blam");
 
 let art = document.querySelectorAll(".art");
 
-
+let poster = document.getElementById("poster");
 
 let lines = document.querySelectorAll(".line");
 
@@ -204,6 +204,9 @@ bblack.addEventListener("click", bblackFunction);
 lwhite.addEventListener("click", lwhiteFunction);
 
 button0.addEventListener("click", randomPosition);
+poster.addEventListener("click", randomPosition);
+grid.addEventListener("click", randomPosition);
+
 
 
 // transparent.addEventListener("click", transparentFunction);
@@ -233,6 +236,7 @@ button.addEventListener("click", randomPosition);
 for(let arts of art){
   arts.classList.add("clippy");
 }
+
 
 
 

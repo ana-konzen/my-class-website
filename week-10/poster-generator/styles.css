@@ -13,8 +13,15 @@
 
 }
 
+button {
+    cursor: pointer;
+    z-index: 9999;
+}
+
 #button0 {
     border: 1px solid grey;
+    cursor: pointer;
+    background: white;
 }
 
 #animate {
@@ -34,17 +41,7 @@
     clip-path: url(#mask);
 }
 
-#rectangle {
-    position: fixed;
-    bottom: 0px;
-    background: white;
-    height: 8vh;
-    width: 100vw;
-    left: 50vw;
-    transform: translateX(-50%);
-    z-index: 999;
 
-}
 
 #bfrida {
     background-image: url(frida.jpeg);
@@ -403,6 +400,7 @@ color: white;
     bottom: 100px;
     display: flex;
     position: fixed;
+
   
     transform: translateX(-50%);
     flex-wrap: wrap;
@@ -411,6 +409,7 @@ color: white;
 #grid {
     /* background-color: #EFDEC6; */
     height: 800px;
+    cursor: pointer;
     width: 700px;
     left: 50vw;
     top: 250px;
@@ -435,7 +434,7 @@ color: white;
     transform: translateX(-50%);
     border: solid 1px black;
     overflow: hidden;
-
+    cursor: pointer;
 
 
 }
