@@ -120,12 +120,12 @@ let lineA2 = lines[4];
 let maxDist = 200;
 let minAng = Math.PI/3;
 let maxY = grid.offsetHeight - squareM.offsetWidth - 100;
-let maxX = grid.offsetWidth - squareM.offsetWidth - 100;
+let maxX = grid.offsetWidth - squareM.offsetWidth;
 
 
 
-let minWeight = 70;
-let maxWeight = 95;
+let minWeight = 90;
+let maxWeight = 120;
 
 let lineWeight;
 let minDist = lineWeight;
