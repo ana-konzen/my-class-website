@@ -3,33 +3,31 @@
 let exclist = document.getElementById("exclist");
 let exercise = document.getElementById("exercises");
 let project = document.getElementById("projects");
+let circle = document.getElementById("circle");
 
 
 let prolist = document.getElementById("prolist");
 
 
+let y = 0;
+let x=0;
 
-function setup() {
-    let cnv = createCanvas(windowWidth, windowHeight);
-    cursor(CROSS);
+// function setup() {
+//     let cnv = createCanvas(windowWidth, windowHeight);
+//     cursor(CROSS);
 
     exercise.addEventListener("click", openExc);
     project.addEventListener("click", openPro);
+    circle.style.left = e.clientX + 'px'; 
+    circle.style.top = e.clientY + 'px';
 
 
-}
-
-function draw() {
-
-    fill(114, 47, 55);
-
-    ellipse(mouseX, mouseY, 100, 100);
+// }
 
 
-}
 
-function mousePressed() {
-    clear();}
+
+
 
 function openExc() {
     exclist.classList.toggle("appear");

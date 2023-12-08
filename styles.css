@@ -60,6 +60,24 @@ font-style: normal;
 
 #projects {top: 25vh;}
 
+#circle {
+    width: 500px;
+    height: 500px;
+    background: #722F37;
+    /* border: solid 1px black; */
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(1px);
+    top: 10vh;
+    left: 10vw;
+    animation: blurring 3s infinite alternate;
+    transition: 2s;
+}
+
+@keyframes blurring {
+to{filter: blur(20px);}
+}
+
 
 
 .big h2:hover {filter: blur(2px);}
