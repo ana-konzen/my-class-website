@@ -11,12 +11,16 @@ let multi = document.getElementById("multi");
 let bnone = document.getElementById("bnone");
 // let lnone = document.getElementById("lnone");
 
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button:not(.exception)");
 
-let bfrida = document.getElementById("bfrida");
-let bdiego = document.getElementById("bdiego");
+let bfrida = document.querySelectorAll(".bfrida");
+let bdiego = document.querySelectorAll(".bdiego");
 
 let menu = document.getElementById("menu");
+
+let maskbuttons = document.querySelectorAll(".maskbuttons");
+let backbuttons = document.querySelectorAll(".backbuttons");
+
 
 let frida = document.getElementById("frida");
 let diego = document.getElementById("diego");
@@ -64,11 +68,11 @@ let squares = document.querySelectorAll(".square");
 
 let letters = document.querySelectorAll(".letter");
 
-let btarsila = document.getElementById("btarsila");
+let btarsila = document.querySelectorAll(".btarsila");
 
-let bberni = document.getElementById("bberni");
+let bberni = document.querySelectorAll(".bberni");
 
-let blam = document.getElementById("blam");
+let blam = document.querySelectorAll(".blam");
 
 
 let art = document.querySelectorAll(".art");
@@ -127,8 +131,8 @@ let maxX = grid.offsetWidth - squareM.offsetWidth;
 
 
 
-let minWeight = 90;
-let maxWeight = 120;
+let minWeight = 100;
+let maxWeight = 160;
 
 let lineWeight;
 let minDist = lineWeight;
@@ -143,10 +147,13 @@ let palette = [blue, lightblue, red, yellow, green];
 //   square.classList.add("no");
 // }
 
-
+for(let arts of art){
+  arts.classList.add("clippy");
+}
 
 randomPosition();
 multiFunction();
+// randomizeAll();
 
 
 let myInterval;
@@ -203,29 +210,59 @@ bwhite.addEventListener("click", bwhiteFunction);
 lblack.addEventListener("click", blackFunction);
 beige.addEventListener("click", beigeFunction);
 
+blackback.addEventListener("click", blackbackFunction);
+
 
 
 bblack.addEventListener("click", bblackFunction);
 lwhite.addEventListener("click", lwhiteFunction);
 
 button0.addEventListener("click", randomPosition);
-poster.addEventListener("click", randomPosition);
-grid.addEventListener("click", randomPosition);
+// poster.addEventListener("click", randomPosition);
+// grid.addEventListener("click", randomPosition);
 
 
 
 // transparent.addEventListener("click", transparentFunction);
 
 
-btarsila.addEventListener("click", tarsilaFunction);
-bberni.addEventListener("click", berniFunction);
-blam.addEventListener("click", lamFunction);
-bfrida.addEventListener("click", fridaFunction);
-bdiego.addEventListener("click", diegoFunction);
 
-bmask.addEventListener("click", unmaskFunction);
 
-hide.addEventListener("click", hideFunction);
+
+
+for(let button of btarsila){
+  button.addEventListener("click", tarsilaFunction);
+  }
+
+for(let button of bberni){
+  button.addEventListener("click", berniFunction);
+  }
+
+for(let button of blam){
+    button.addEventListener("click", lamFunction);
+    }
+
+for(let button of bfrida){
+  button.addEventListener("click", fridaFunction);
+  }
+
+for(let button of bdiego){
+  button.addEventListener("click", diegoFunction);
+  }
+  
+for(let button of maskbuttons){
+button.addEventListener("click", addMask);
+}
+
+for(let button of backbuttons){
+  button.addEventListener("click", removeMask);
+  }
+
+// bmask.addEventListener("click", unmaskFunction);
+
+hideColor.addEventListener("click", hideColorFunction);
+hidePlayer.addEventListener("click", hidePlayerFunction);
+
 
 
 bnone.addEventListener("click", noneFunction);
@@ -238,9 +275,7 @@ button.addEventListener("click", randomPosition);
 
 }
 
-for(let arts of art){
-  arts.classList.add("clippy");
-}
+
 
 
 
@@ -262,7 +297,9 @@ for(let arts of art){
 // lineM.style.height = Math.random() * 10 + 1 + "px";}
 
 
+function swapFunction(){
 
+}
 
 
 function randomAngle(){
@@ -297,21 +334,25 @@ function getValidPoint(posX, posY, ang0, limX){
 }
 
 function randomPosition(){
-lineWeight = Math.random() * (maxWeight - minWeight) + minWeight;
-minDist = lineWeight;
-wOffset = lineWeight;
 
-r.style.setProperty("--lineWeight", lineWeight + "px");
+  lineWeight = Math.random() * (maxWeight - minWeight) + minWeight;
 
-for(let square of squares) {
-  square.style.fontSize = lineWeight - (lineWeight / 6) + "px";
-  }
+  minDist = lineWeight;
+  wOffset = lineWeight;
+
+  r.style.setProperty("--lineWeight", lineWeight + "px");
+  
+  for(let square of squares) {
+    square.style.fontSize = lineWeight - (lineWeight / 6) + "px";
+    }
+
+
 
   let xM = Math.random() * (maxX - 3*minDist);
   let yM = Math.random() * maxY;
   let angT = 0;
 
-  console.log("posxM: " + xM + " posyM:" + yM)
+
 
   squareM.style.left = xM + "px";
 
@@ -320,8 +361,6 @@ for(let square of squares) {
     
   let [angA, distA, posxA, posyA] = getValidPoint(xM, yM, angT, maxX - 3*minDist);
 
-  console.log("posxA: " + posxA + " posyA:" + posyA)
-  console.log("angA: " + angA*180/Math.PI + " distA:" + distA)
   let yA = 0;
   let xA = distA-letterOffset;
   angT += angA;
@@ -344,8 +383,6 @@ for(let square of squares) {
   let xL = distL-letterOffset;
   angT += angL;
 
-  console.log("posxL: " + posxL + " posyL:" + posyL)
-  console.log("angL: " + angL*180/Math.PI + " distL:" + distL)
 
   letterL.style.transform = "rotate(" + (-angT) + "rad)";
   squareL.style.left = xL + "px";
@@ -471,85 +508,12 @@ pathM.style.x = xM;
   pathA2.style.transformOrigin =  angleA2;
   pathA2.style.transform = " rotate(" + (angM + angL + angA + angB + angA2) + "rad)";
 
-  // let initialX = 0;
-  // let initialY = 0;
-  // let moveElement = false;
-  
-  // let events = {
-  //   mouse: {
-  //     down: "mousedown",
-  //     move: "mousemove",
-  //     up: "mouseup",
-  //   },
-  //   touch: {
-  //     down: "touchstart",
-  //     move: "touchmove",
-  //     up: "touchend",
-  //   },
-  // };
-  
-  
-  
-  
-  // squareM.addEventListener("mousedown", (e) => {
-  // //   e.preventDefault();
-  //   initialX = e.clientX;
-  //   initialY = e.clientY;
-  //   squareM.style.zIndex = "3";
-  //   moveElement = true;
-  // });
-  // squareM.addEventListener("mousemove", (e) => {
-  //   if (moveElement) {
-  //     // e.preventDefault();
-  //   squareM.style.zIndex = "3";
-  
-  //     let newX = e.clientX;
-  //     let newY = e.clientY;
-  //     yM = squareM.offsetTop - (initialY - newY);
-  //     xM = squareM.offsetLeft - (initialX - newX);
-  //     newAng = (xA - xM < 0) * Math.PI + Math.atan((yA - yM)/(xA - xM));
-  //     newAngm = (xM - xA2 < 0) * Math.PI + Math.atan((yA2 - yM)/(xA2 - xM));
-  //     squareM.style.top = yM + "px";
-  //     squareM.style.left = xM + "px";
-  //     distA = (yA - yM) / Math.sin(newAng);
-  //     lineM.style.transform = "rotate(" + newAng + "rad)"
-  //     lineM.style.width = distA + "px";
-  //     initialX = newX;
-  //     initialY = newY;
-  
-  //     distM = (yM - yA2) / Math.sin(newAngm);
-  //         lineA2.style.transform = "rotate(" + newAngm + "rad)"
-  //         lineA2.style.width = distM + "px";
-         
-  //   }
-  // });
-  // squareM.addEventListener(
-  //   "mouseup",
-  //   (stopMovement = () => {
-  //     moveElement = false;
-  //   squareM.style.zIndex = "2";
-  
-  //   })
-  // );
-  // squareM.addEventListener("mouseleave", stopMovement);
-  // squareM.addEventListener("mouseup", () => {
-  //   moveElement = false;
-  //   squareM.style.zIndex = "2";
-  
-  // });
-  };
+console.log((pathM.getBoundingClientRect().left));
 
+console.log(lineM.getBoundingClientRect().left - grid.getBoundingClientRect().left + mySVG.getBoundingClientRect().left);
+console.log(lineM.getBoundingClientRect().top - grid.getBoundingClientRect().top);
 
-
-
-
-function blackFunction(){
-  bmask.style.display = "none";
-
-
-  for(let line of lines){
-    line.style.backgroundColor = "black";
-      };
+dragLogo();
 
 };
 
@@ -557,32 +521,65 @@ function blackFunction(){
 
 
 
+function blackFunction(){
+  // bmask.style.display = "none";
+
+
+  for(let line of lines){
+    line.style.backgroundColor = "black";
+      };
+
+
+};
+
+
+
+
 function multiFunction(){
-  bmask.style.display = "none";
+  
+
+  console.log(getComputedStyle(squareM).color);
 
 
+ 
 
-  mySVG.style.opacity = 0;
+  if(getComputedStyle(squareM).color == "rgba(0, 0, 0, 0)"){
+    lineM.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+    lineA.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+    lineL.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+    lineB.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+    lineA2.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
 
-  [squareM.style.color, lineM.style.backgroundColor] = randomColor();
-  [squareA.style.color, lineA.style.backgroundColor] = randomColor();
-  [squareL.style.color, lineL.style.backgroundColor] = randomColor();
-  [squareB.style.color, lineB.style.backgroundColor] = randomColor();
-  [squareA2.style.color, lineA2.style.backgroundColor] = randomColor();
+  }
+  else{
 
-      
+  [letterM.style.color, lineM.style.backgroundColor] = randomColor();
+  [letterA.style.color, lineA.style.backgroundColor] = randomColor();
+  [letterL.style.color, lineL.style.backgroundColor] = randomColor();
+  [letterB.style.color, lineB.style.backgroundColor] = randomColor();
+  [letterA2.style.color, lineA2.style.backgroundColor] = randomColor();
+
+  }
       }
+
+function lineMulti(){
+  lineM.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+  lineA.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+  lineL.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+  lineB.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+  lineA2.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
+}
 
 
 
 function bwhiteFunction(){
-  for(let square of squares){
+  for(let square of letters){
     square.style.color = white;
       }; 
     };
 
     function bblackFunction(){
-      for(let square of squares){
+      for(let square of letters){
         square.style.color = "black";
           }; 
         };
@@ -599,124 +596,134 @@ function bwhiteFunction(){
 
 
 
-function hideFunction(){
-  if(getComputedStyle(menu).top == "10px"){
-  menu.style.top = "-200px";
-hide.innerHTML = "Show Menu";
-hide.style.top = "0px";
-hide.style.background = "black";
-hide.style.color = "rgb(243, 220, 192)";
+function hidePlayerFunction(){
+  if(getComputedStyle(menu).left == "-1px"){
+  menu.style.left = "-300px";
+hidePlayer.innerHTML = "colors";
+hidePlayer.style.left = "-25px";
+hidePlayer.style.background = "black";
+hidePlayer.style.color = "rgb(243, 220, 192)";
 
-poster.style.top = "20px";
-grid.style.top = "20px";
+
 
 }
   else{
-    menu.style.top = "10px";
-    hide.innerHTML = "Hide Menu";
-    hide.style.top = "210px";
-    hide.style.background = "rgb(243, 220, 192)";
-hide.style.color = "black";
-poster.style.top = "250px";
-grid.style.top = "250px";
+    menu.style.left = "-1px";
+    hidePlayer.innerHTML = "hide";
+    hidePlayer.style.left = "272px";
+    hidePlayer.style.background = "rgb(243, 220, 192)";
+hidePlayer.style.color = "black";
+
 
 
   }
 }
 
-function unmaskFunction(){
+
+function hideColorFunction(){
+  if(getComputedStyle(shape).right == "-1px"){
+  shape.style.right = "-300px";
+hideColor.innerHTML = "player";
+hideColor.style.right = "-25px";
+hideColor.style.background = "black";
+hideColor.style.color = "rgb(243, 220, 192)";
+
+
+
+}
+  else{
+    shape.style.right = "-1px";
+    hideColor.innerHTML = "hide";
+    hideColor.style.right = "272px";
+    hideColor.style.background = "rgb(243, 220, 192)";
+hideColor.style.color = "black";
+
+
+
+  }
+}
+
+function removeMask(){
+
   for(let arts of art){
-    arts.classList.toggle("clippy");
+    arts.classList.remove("clippy");
 
   }
-  
-  if(art[0].classList.contains("clippy")
-  ){
-    for(let line of lines){
-      line.style.backgroundColor = "transparent";
-  
-    }
-    for(let line of squares){
-      line.style.color = white;
-  
-    }
-    info.classList.remove("whitetext");
+
+  info.style.color = white;
+
+
+}
+
+
+
+function addMask(){
+
+  console.log(getComputedStyle(poster).backgroundColor)
+
+  for(let arts of art){
+    arts.classList.add("clippy");
+
   }
-else{
+
   for(let line of lines){
-    line.style.backgroundColor = "black";
-
+    line.style.backgroundColor = "transparent";
   }
+
+  if(getComputedStyle(poster).backgroundColor == white){
+  info.style.color = black;}
+  else {info.style.color = white;}
+
+}
+
+
 
   for(let line of squares){
     line.style.color = white;
 
   }
 
-  info.classList.add("whitetext");}
-  
-}
+
 
 
 function transparentFunction() {
   for(let line of lines){
     line.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
-  for(let square of squares){
+  for(let square of letters){
     square.style.color = white;
       }; 
 
 }
 
 function tarsilaFunction () {
-  for(let line of lines){
-    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
+
+  let artists = document.querySelectorAll(".art:not(#tarsila)");
+
+  for (let art of artists){
+    art.style.opacity = 0;
   }
-  for(let square of squares){
-    square.style.color = white;
-      }; 
-  berni.style.opacity = 0;
-  lam.style.opacity = 0;
-  diego.style.opacity = 0;
-  frida.style.opacity = 0;
-
   tarsila.style.opacity = 100;
-  bmask.style.display = "block";
-
   info.innerHTML = "tarsila <br> do amaral<br><span>11.10.2023</span>"
-
 }
 
 function berniFunction () {
-  for(let line of lines){
-    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
-  }
-  for(let square of squares){
-    square.style.color = white;
-      }; 
-  tarsila.style.opacity = 0;
-  lam.style.opacity = 0;
+  let artists = document.querySelectorAll(".art:not(#berni)");
 
-  diego.style.opacity = 0;
-  frida.style.opacity = 0;
+  for (let art of artists){
+    art.style.opacity = 0;
+  }
   berni.style.opacity = 100;
-  bmask.style.display = "block";
   info.innerHTML = "antonio <br> berni<br><span>11.10.2023</span>"
 
 }
 
 function lamFunction () {
-  for(let line of lines){
-    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
-  }
-  for(let square of squares){
-    square.style.color = white;
-      }; 
-  tarsila.style.opacity = 0;
-  diego.style.opacity = 0;
-  frida.style.opacity = 0;
+  let artists = document.querySelectorAll(".art:not(#lam)");
 
-  berni.style.opacity = 0;
+  for (let art of artists){
+    art.style.opacity = 0;
+  }
   lam.style.opacity = 100;
 
   bmask.style.display = "block";
@@ -728,27 +735,16 @@ function lamFunction () {
 }
 
 
-
-
-
-
-
 function fridaFunction () {
-  for(let line of lines){
-    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
-  }
-  for(let square of squares){
-    square.style.color = white;
-      }; 
-  tarsila.style.opacity = 0;
 
-  berni.style.opacity = 0;
-  lam.style.opacity = 0;
-  diego.style.opacity = 0;
+  let artists = document.querySelectorAll(".art:not(#frida)");
+
+  for (let art of artists){
+    art.style.opacity = 0;
+  }
 
   frida.style.opacity = 100;
 
-  bmask.style.display = "block";
 
   info.innerHTML = "frida <br> kahlo<br><span>11.10.2023</span>"
 
@@ -758,32 +754,38 @@ function fridaFunction () {
 function beigeFunction () {
   poster.style.background = white;
   for(let arts of art){
-    arts.style.opacity = 0;
+    if(arts.classList.contains("clippy")){
+    arts.style.display = "block";
+
+  } else { 
+    arts.style.display = "none";
 
   }
 
-  for(let square of squares){
-    square.style.color = black;
-      }; 
-}
+      info.style.color = black;
+}}
+
+function blackbackFunction(){poster.style.background = black;
+  for(let arts of art){
+    if(arts.classList.contains("clippy")){
+    arts.style.display = "block";
+
+  } else { 
+    arts.style.display = "none";
+
+  }
+      info.style.color = white;
+  
+}}
 
 function diegoFunction () {
-  for(let line of lines){
-    line.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  let artists = document.querySelectorAll(".art:not(#diego)");
+
+  for (let art of artists){
+    art.style.opacity = 0;
   }
-  for(let square of squares){
-    square.style.color = white;
-      }; 
-  tarsila.style.opacity = 0;
-
-  berni.style.opacity = 0;
-  lam.style.opacity = 0;
-  diego.style.opacity = 0;
-
-  frida.style.opacity = 0;
   diego.style.opacity = 100;
 
-  bmask.style.display = "block";
 
   info.innerHTML = "diego <br> rivera<br><span>11.10.2023</span>"
 
@@ -792,9 +794,14 @@ function diegoFunction () {
 }
 
 function noneFunction(){
-  for(let square of squares){
-    square.style.color = "transparent";
-      }; 
+  for(let square of letters){
+    if (getComputedStyle(square).color == "rgba(0, 0, 0, 0)"){
+      square.style.color = black;
+    }
+    else{
+    square.style.color = "transparent";}
+
+      };
 }
 
 function lnoneFunction(){
@@ -822,10 +829,142 @@ function randomColor(){
 
 console.log([palette[index1], palette[index2]]);
 
-
   return[palette[index1], palette[index2]]
 
   
 }
+
+function randomizeAll(){
+  let myArtistsFunctions = [tarsilaFunction, lamFunction, berniFunction, fridaFunction, diegoFunction];
+  let colorBackgroundFunctions = [beigeFunction, blackbackFunction];
+  let colorLineFunctions = [blackFunction, lineMulti, multiFunction, lwhiteFunction];
+  let myTextFunctions = [bwhiteFunction, bblackFunction, noneFunction];
+  let myMaskFunctions = [addMask, removeMask];
+  let lineFunctions = [colorLineFunctions, myArtistsFunctions];
+  let backgroundFunctions = [colorBackgroundFunctions, myArtistsFunctions];
+
+  randomPosition();
+
+  
+let backIndex = Math.floor(Math.random() * colorBackgroundFunctions.length); 
+let textIndex = Math.floor(Math.random() * myTextFunctions.length);
+let lineIndex = Math.floor(Math.random() * colorLineFunctions.length);
+
+myTextFunctions[textIndex]();
+
+
+if (backIndex == 0){
+  lineIndex = Math.floor(Math.random() * 3)
+}
+else if (backIndex == 1){
+  lineIndex = Math.floor(Math.random() * 3 + 1)
+}
+
+colorBackgroundFunctions[backIndex]();
+colorLineFunctions[lineIndex]();
+
+
+
+
+
+
+
+
+
+
+  
+
+}
+
+
+
+
+
+dragElement(info);
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    elmnt.onmousedown = dragMouseDown;
+  
+
+  function dragMouseDown(e) {
+
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+
+    e.preventDefault();
+
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+function dragLogo() {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    squareM.onmousedown = dragMouseDown;
+  
+
+  function dragMouseDown(e) {
+   
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    
+    e.preventDefault();
+
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+
+
+    // set the element's new position:
+
+
+grid.style.top = (grid.offsetTop - pos2) + "px";
+grid.style.left = (grid.offsetLeft - pos1) + "px";
+
+mask.style.transform = "translate(" + (grid.offsetLeft - pos1 - (grid.offsetWidth/2)) + "px, " + (grid.offsetTop - pos2) + "px)";
+
+
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
 
 
