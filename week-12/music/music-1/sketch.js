@@ -28,7 +28,7 @@ function preload(){
 }
 
 function setup() {
-  let cnv = createCanvas(393, 852);
+  let cnv = createCanvas(393, 752);
   // frameRate(10);
 
   angleMode(DEGREES);
@@ -43,7 +43,7 @@ function setup() {
   amp = new p5.Amplitude();
 
   let button = createButton('clear canvas');
-  button.position(0, 100);
+  button.position(windowWidth/2 - 40, cnvy + height + 10);
 
   button.mousePressed(() => {
     clear();
@@ -125,11 +125,11 @@ push();
 min = 50;
 
 x = map(max(min, averages[100]), min, 255, 0, width);
-y = map(max(min, trebleHist[0]), min, 255, height, height/2);
+y = map(max(min, trebleHist[0]), min, 255, height, height/1.5);
 ang = map(mid, 0, 255, 0, 360);
 console.log(treble);
 
-translate(x, height + (y - shift - height)%height/1.5);
+translate((x + shift)%(width - 120), height + (y - shift - height)%(height/2 + 10));
 
 size =  map(treble, 0, 255, 0, 30);
 rotate(ang);
@@ -152,7 +152,7 @@ push();
 min = 0;
 
 x = map(max(min, highMid), min, 255, 0, width);
-y = map(max(min, highHist[10]), min, 255, 0, height/2);
+y = map(max(min, highHist[10]), min, 255, 0, height/1.5);
 ang = map(mid, 0, 255, 0, 360);
 
 translate(x, y);
@@ -180,7 +180,7 @@ x = map(max(min, line), min, 255, width/6, width - width/6);
 y = map(max(min, lineHist[10]), min, 255, 0, height/3);
 ang = map(line, 0, 255, 0, 360);
 
-translate(x, (y + shift)%(height/2 + 100));
+translate(x, (y + shift)%(height/2 + 200));
 
 size =  map(line, 0, 255, 0, 100);
 // rotate(ang);
@@ -200,15 +200,15 @@ push();
 min = 0;
 
 x = map(max(min, low), min, 255, width/3, width);
-y = map(max(min, lowHist[0]), min, 255, height, height/2);
+y = map(max(min, lowHist[20]), min, 255, height, height/2);
 ang = map(low, 0, 255, 0, 360);
 
-translate(x, height + (y - shift - height)%height/1.5);
+translate(x, height + (y - shift - height)%(height/2));
 
 size =  map(low, 0, 255, 0, 100);
 size =  map(lowHist[20], 0, 255, 0, 100);
 rotate(ang);
-fill(255, low/2, low);
+fill(low*1.5, low/2, low);
 
 rect(0, 0, size, size2);
 

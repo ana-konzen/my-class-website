@@ -72,6 +72,7 @@ font-style: normal;
     left: 10vw;
     animation: blurring 3s infinite alternate;
     transition: 2s;
+    
 }
 
 @keyframes blurring {
@@ -80,7 +81,8 @@ to{filter: blur(20px);}
 
 
 
-.big h2:hover {filter: blur(2px);}
+.big h2:hover {filter: blur(2px);
+    cursor: crosshair;}
 
 a {
     color: rgb(51, 51, 51);
@@ -91,18 +93,20 @@ a {
     transition: color 0.5s;
 }
 
-.big a:hover {color: white;}
+.big a:hover {color: white;
+    }
 
 
 #main-header{
     font-family: edita, serif;
     font-weight: 700;
     left: 5vw;
-    top: 5vh;
+    top: 15vh;
     font-style: italic;
     color: black;
     font-size:40px;
     position: absolute;
+    user-select: none;
     text-align: center;
     width: 500px;
     height: 60px;
@@ -110,14 +114,22 @@ a {
     
 }
 
+#main-header:hover {
+    cursor: crosshair;
+}
+
 #exclist {
     position: fixed;
     top: 15vh;
+    user-select: none;
+
 }
 
 #prolist {
     position: fixed;
     top: 30vh;
+    user-select: none;
+
 }
 
 
@@ -159,14 +171,32 @@ a {
         color: rgb(51, 51, 51);
         font-family: sans-serif;
         background-color: transparent;
+        user-select: none;
         
         position: relative;
     }
 
+    #exercises {
+    user-select: none;
+
+    }
+
+ 
+
+    #projects {
+    user-select: none;
+
+    }
+
+ 
+
+
     ul {margin: 0;
     padding: 10px;
 position: relative;
-top: -20px;}
+top: -20px;
+user-select: none;
+}
 
 
 }
